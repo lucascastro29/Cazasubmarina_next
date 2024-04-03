@@ -1,27 +1,33 @@
+import carrousel_Image_1 from "@/public/img/carrousel_home/1.jpg"
+import carrousel_Image_1_0 from "@/public/img/carrousel_home/2.jpg"
+
+import Image from "next/image"
+
 export default function carousel(){
 
     return(
-        <div id="default-carousel" className="relative w-full" data-carousel="slide">
-        <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-            {/*
-             <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <Image src={icon} width={120} height={120} alt="icon_image" />
+        <div id="default-carousel" className="relative w-auto"  data-carousel="slide">
+        <div className="relative  overflow-hidden "style={{height:"785px"}}>
+            
+            
+            <div className=" duration-700 ease-in-out h-fit" data-carousel-item>
+            <div className="relative  w-full sm:block hidden h-fit " >   
+   <Image alt="fondo_image" className=" z-0 absolute sm:block hidden  "  height={1080} width={1920} src={carrousel_Image_1}/>
+                <div className="relative  ">
+                    <Image alt="fondo_image" className=" sm:block hidden absolute top-0 right-0 bottom-10 opacity-75"   height={3000} width={497} src={carrousel_Image_1_0}/>
+                </div>
 
-                <Image src="/docs/images/carousel/carousel-1.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+</div>            </div>
+            <div className=" duration-700 ease-in-out" data-carousel-item>
+    <Image alt="fondo_image" className="sm:block hidden  "  src={carrousel_Image_1}/>
             </div>
-            <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                <Image src="/docs/images/carousel/carousel-2.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <div className="duration-700 ease-in-out" data-carousel-item>
+    <Image alt="fondo_image" className="sm:block hidden  "   height={1080} width={1920} src={carrousel_Image_1}/>
             </div>
-            <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                <Image src="/docs/images/carousel/carousel-3.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <div className="duration-700 ease-in-out" data-carousel-item>
+    <Image alt="fondo_image" className="sm:block hidden "   height={1080} width={1920} src={carrousel_Image_1}/>
             </div>
-            <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                <Image src="/docs/images/carousel/carousel-4.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-            </div>
-            <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                <Image src="/docs/images/carousel/carousel-5.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-            </div>
-            */ }
+            
            
 
         </div>
@@ -48,7 +54,10 @@ export default function carousel(){
                 <span className="sr-only">Next</span>
             </span>
         </button>
+        <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+
+
     </div>
-    
+  
         )
 }

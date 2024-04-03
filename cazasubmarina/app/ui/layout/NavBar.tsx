@@ -21,7 +21,7 @@ export default function Page() {
       id="Home"
     >
       <div className="max-w-screen-xl flex  items-center  mx-auto pt-5 pb-5">
-          <Link href={"/Home"}>
+          <Link href={"/"}>
           <Image src={icon} width={120} height={120} alt="icon_image" />
         </Link> 
         <div className=" md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
@@ -70,7 +70,7 @@ export default function Page() {
                 CURSOS
               </Link>
             </li>
-            <li>
+            <li className={kanit.className}>
               <Link
                 href={"/Equipos"}
                 className="block py-2 px-3 md:p-0 text-black rounded  hover:text-red hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 d:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -78,7 +78,7 @@ export default function Page() {
                 EQUIPOS
               </Link>
             </li>
-            <li>
+            <li className={kanit.className}>
               <Link
                 href={"/Galeria"}
                 className="block py-2 px-3 md:p-0 text-black rounded  hover:text-red hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 d:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -86,7 +86,7 @@ export default function Page() {
                 GALERIA
               </Link>
             </li>
-            <li>
+            <li className={kanit.className}>
               <Link
                 href={"/Eventos"}
                 className="block py-2 px-3 md:p-0 text-black rounded  hover:text-red hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 d:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -94,7 +94,7 @@ export default function Page() {
                 EVENTOS
               </Link>
             </li>
-            <li>
+            <li className={kanit.className}>
               <Link
                 href={"/Nosotros"}
                 className="block py-2 px-3 md:p-0 text-black rounded  hover:text-red hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 d:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
