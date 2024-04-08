@@ -17,7 +17,8 @@ export default function carousel(){
                     <Image alt="fondo_image" className=" sm:block hidden absolute top-0 right-0 bottom-10 opacity-75"   height={3000} width={497} src={carrousel_Image_1_0}/>
                 </div>
 
-</div>            </div>
+    </div>           
+     </div>
             <div className=" duration-700 ease-in-out" data-carousel-item>
     <Image alt="fondo_image" className="sm:block hidden  "  src={carrousel_Image_1}/>
             </div>
