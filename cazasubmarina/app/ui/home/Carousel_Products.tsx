@@ -28,7 +28,7 @@ export default function Carousel_Swiper(){
     return(<>
 
        <div className="flex flex-row relative mt-5 ml-20px mr-20px" >
-       <div className=" h-full relative" style={{backgroundColor:"red",width:"40%"}}></div>
+       <div className=" h-full w-full relative" style={{backgroundColor:"red",width:"40%"}}>Productos Nuevos</div>
 
       <Swiper
         slidesPerView={4}
@@ -46,9 +46,9 @@ export default function Carousel_Swiper(){
                                         
                                         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md transition ease-in-out delay-150 duration-500 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer">
     
-                                        <div className={`flex flex-col items-center pb-10 `}>
+                                        <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={aletas_1} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                                
+                                            <p>Aletas</p> 
                                             
     
                                                                 
@@ -63,13 +63,14 @@ export default function Carousel_Swiper(){
                                         
                                         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md transition ease-in-out delay-150 duration-500 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer">
     
-                                        <div className={`flex flex-col items-center pb-10 `}>
+                                        <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={aletas_2} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                                
+                                               <p>Aletas</p> 
                                             
     
                                                                 
                                             </div>
+                                            
                                             </div>
     
     
@@ -80,9 +81,10 @@ export default function Carousel_Swiper(){
                                         
                                         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md transition ease-in-out delay-150 duration-500 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer">
     
-                                        <div className={`flex flex-col items-center pb-10 `}>
+                                        <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={aletas_3} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                                
+                                                <p>Aletas</p> 
+
                                             
     
                                                                 
@@ -97,10 +99,9 @@ export default function Carousel_Swiper(){
                                         
                                         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md transition ease-in-out delay-150 duration-500 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer">
     
-                                        <div className={`flex flex-col items-center pb-10 `}>
+                                        <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={arpones_1} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                                
-                                            
+                                            <p>Aletas</p>                                             
     
                                                                 
                                             </div>
@@ -114,10 +115,9 @@ export default function Carousel_Swiper(){
                                         
                                         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md transition ease-in-out delay-150 duration-500 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer">
     
-                                        <div className={`flex flex-col items-center pb-10 `}>
+                                        <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={arpones_2} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                                
-                                            
+                                            <p>Aletas</p>                                             
     
                                                                 
                                             </div>
@@ -131,10 +131,9 @@ export default function Carousel_Swiper(){
                                         
                                         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md transition ease-in-out delay-150 duration-500 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer">
     
-                                        <div className={`flex flex-col items-center pb-10 `}>
+                                        <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={arpones_3} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                                
-                                            
+                                            <p>Aletas</p>                                             
     
                                                                 
                                             </div>
@@ -147,10 +146,9 @@ export default function Carousel_Swiper(){
                                         
                                         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md transition ease-in-out delay-150 duration-500 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer">
     
-                                        <div className={`flex flex-col items-center pb-10 `}>
+                                        <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={mascaras_1} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                                
-                                            
+                                            <p>Aletas</p>                                             
     
                                                                 
                                             </div>
@@ -164,10 +162,9 @@ export default function Carousel_Swiper(){
                                         
                                         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md transition ease-in-out delay-150 duration-500 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer">
     
-                                        <div className={`flex flex-col items-center pb-10 `}>
+                                        <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={mascaras_2} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                                
-                                            
+                                            <p>Aletas</p>                                             
     
                                                                 
                                             </div>
@@ -181,10 +178,9 @@ export default function Carousel_Swiper(){
                                         
                                         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md transition ease-in-out delay-150 duration-500 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer">
     
-                                        <div className={`flex flex-col items-center pb-10 `}>
+                                        <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={mascaras_3} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                                
-                                            
+                                            <p>Aletas</p>                                             
     
                                                                 
                                             </div>
