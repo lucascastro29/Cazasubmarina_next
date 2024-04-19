@@ -1,4 +1,10 @@
 'use client'
+import { Kanit } from "next/font/google";
+
+const kanit=Kanit({
+  weight:'400',
+  subsets:['latin']
+})
 
 import aletas_1 from "@/public/img/Products/products_img/Aletas/Aletas_seasub_dive_2.jpg"
 import aletas_2 from "@/public/img/Products/products_img/Aletas/Aletas_seasub_predator_1.jpg"
@@ -28,17 +34,19 @@ export default function Carousel_Swiper(){
     return(<>
 
        <div className="flex flex-row relative mt-5 ml-20px mr-20px" >
-       <div className=" h-full w-full relative" style={{backgroundColor:"red",width:"40%"}}>Productos Nuevos</div>
+       <div className="  w-full relative " style={{width:"40%",height:"300px",marginLeft:"20px",marginTop:"20px",fontSize:"300%"}}><div className={kanit.className}>PRODUCTOS NUEVOS!</div></div>
 
       <Swiper
         slidesPerView={4}
         spaceBetween={30}
-        centeredSlides={true}
+        centeredSlides={false}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiper absolute"
+        className="mySwiper"
+        navigation={true}
+
       >
 
         <SwiperSlide style={{background:"transparent"}}>
