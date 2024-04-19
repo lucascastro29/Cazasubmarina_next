@@ -34,7 +34,7 @@ export default function Carousel_Swiper(){
     return(<>
 
        <div className="flex flex-row relative mt-5 ml-20px mr-20px" >
-       <div className="  w-full relative " style={{width:"40%",height:"300px",marginLeft:"20px",marginTop:"20px",fontSize:"300%"}}><div className={kanit.className}>PRODUCTOS NUEVOS!</div></div>
+       <div className="  w-full relative " style={{width:"35%",height:"300px",marginLeft:"20px",marginTop:"20px",fontSize:"300%"}}><div className={kanit.className}>PRODUCTOS NUEVOS! <div className="rounded "  style={{backgroundColor:"red",width:"40%",height:"5px"}}></div></div></div>
 
       <Swiper
         slidesPerView={4}
