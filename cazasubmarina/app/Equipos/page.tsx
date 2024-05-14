@@ -5,8 +5,8 @@ import ProductCard from '../ui/equipos/ProductCard';
 import axios from 'axios'; // Importar axios para hacer la solicitud HTTP
 
 const categorias = [
-    'Accesorios', 'Aletas', 'Arpones', 'Bolsos', 'Boya', 'Cinturon', 'Cuchillo', 'Lastre',
-    'Linterna', 'Mascara', 'Neopreno', 'Relojes', 'Respiradores', 'Trajes'
+    'Accesorios', 'Aletas', 'Arpones', 'Bolsos', 'Boyas', 'Cinturones'   , 'Cuchillos', 'Lastres',
+    'Linternas', 'Mascaras', 'Neoprenos', 'Relojes', 'Respiradores', 'Trajes'
   ];
   ;
 
