@@ -1,48 +1,69 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CategoryCard from '../ui/equipos/CategoryCard';
 import ProductCard from '../ui/equipos/ProductCard';
+import axios from 'axios'; // Importar axios para hacer la solicitud HTTP
 
 const categorias = [
-  'accesorios', 'aletas', 'arpones', 'bolsos', 'boya', 'cinturon', 'cuchillo', 'lastre',
-  'linterna', 'mapa', 'mascara', 'neopreno', 'relojes', 'respiradores', 'trajes'
-];
+    'Accesorios', 'Aletas', 'Arpones', 'Bolsos', 'Boya', 'Cinturon', 'Cuchillo', 'Lastre',
+    'Linterna', 'Mascara', 'Neopreno', 'Relojes', 'Respiradores', 'Trajes'
+  ];
+  ;
 
-const productos = [
-  // Ejemplo de datos de productos
-  { id: 1, name: 'Producto 1', category: 'accesorios', description: 'Descripción del producto 1' },
-  { id: 2, name: 'Producto 2', category: 'aletas', description: 'Descripción del producto 2' },
-  // Otros productos...
-];
-
-const EquiposPage = () => {
+export default function page(){
+  const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredCategory, setFilteredCategory] = useState(null);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://lucascastro29.github.io/json_products_cazasubmarina/');
+        setProducts(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const filterProductsByCategory = (category) => {
-    const filtered = productos.filter(product => product.category === category);
+    const filtered = products.filter(product => product.category === category);
     setFilteredProducts(filtered);
+    setFilteredCategory(category);
+  };
+
+  const resetFilter = () => {
+    setFilteredProducts([]);
+    setFilteredCategory(null);
+    // Restaurar la lista completa de productos
+    setProducts(products);
   };
 
   return (
-    <div className="container mx-auto mt-8">
-      <h1 className="text-2xl font-semibold mb-4">Equipos de Caza Submarina</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-        {categorias.map((categoria) => (
-          <CategoryCard key={categoria} category={categoria} onClick={filterProductsByCategory} />
+    <div className="container mx-auto py-8">
+      <h1 className="text-2xl font-semibold mb-4">Productos</h1>
+      <div className="flex flex-wrap gap-4 mb-4">
+        {categorias.map((categoria, index) => (
+          <CategoryCard
+            key={index}
+            category={categoria}
+            onClick={() => filterProductsByCategory(categoria)}
+          />
         ))}
+        <button onClick={resetFilter}>Mostrar todos</button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-        {filteredProducts.length > 0 ?
-          filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          )) :
-          productos.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))
-        }
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {filteredProducts.length > 0
+          ? filteredProducts.map((product, index) => (
+              <ProductCard key={index} product={product} />
+            ))
+          : products.map((product, index) => (
+              <ProductCard key={index} product={product} />
+            ))}
       </div>
     </div>
   );
 };
-
-export default EquiposPage;
