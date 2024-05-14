@@ -44,7 +44,7 @@ export default function page(){
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-2xl font-semibold mb-4">Productos</h1>
+      <h1 className="text-2xl font-semibold mb-4">EQUIPOS</h1>
       <div className="flex flex-wrap gap-4 mb-4">
         {categorias.map((categoria, index) => (
           <CategoryCard
