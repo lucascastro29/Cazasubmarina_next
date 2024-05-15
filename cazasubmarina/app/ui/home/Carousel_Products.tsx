@@ -56,7 +56,7 @@ export default function Carousel_Swiper(){
     
                                         <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={aletas_1} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                            <p>ALETAS SEASUB DIVE</p> 
+                                            <p   style={{borderBottom:"solid black 3px",paddingBottom:"2px", }}>ALETAS SEASUB DIVE</p> 
                                             
     
                                                                 
@@ -73,7 +73,7 @@ export default function Carousel_Swiper(){
     
                                         <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={aletas_2} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                               <p>ALETAS SEASUB PREDATOR</p> 
+                                               <p style={{borderBottom:"solid black 3px",paddingBottom:"2px", }}>ALETAS SEASUB PREDATOR</p> 
                                             
     
                                                                 
@@ -92,7 +92,7 @@ export default function Carousel_Swiper(){
                               
                                         <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={arpones_1} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                            <p>ARPON CRESSI 60</p>                                             
+                                            <p style={{borderBottom:"solid black 3px",paddingBottom:"2px", }}>ARPON CRESSI 60</p>                                             
     
                                                                 
                                             </div>
@@ -108,7 +108,7 @@ export default function Carousel_Swiper(){
         
                                         <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={arpones_2} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                            <p>ARPON CRESSI</p>                                             
+                                            <p style={{borderBottom:"solid black 3px",paddingBottom:"2px", }}>ARPON CRESSI</p>                                             
     
                                                                 
                                             </div>
@@ -124,7 +124,7 @@ export default function Carousel_Swiper(){
     
                                         <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={arpones_3} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                            <p>ARPON DIVECOME ELITE</p>                                             
+                                            <p style={{borderBottom:"solid black 3px",paddingBottom:"2px", }}>ARPON DIVECOME ELITE</p>                                             
     
                                                                 
                                             </div>
@@ -139,7 +139,7 @@ export default function Carousel_Swiper(){
     
                                         <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={mascaras_1} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                            <p>MASCARA SEASUB CLICK</p>                                             
+                                            <p style={{borderBottom:"solid black 3px",paddingBottom:"2px", }}>MASCARA SEASUB CLICK</p>                                             
     
                                                                 
                                             </div>
@@ -155,7 +155,7 @@ export default function Carousel_Swiper(){
         
                                         <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={mascaras_2} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                            <p>ARPON DIVECOME SEAL</p>                                             
+                                            <p style={{borderBottom:"solid black 3px",paddingBottom:"2px", }}>ARPON DIVECOME SEAL</p>                                             
     
                                                                 
                                             </div>
@@ -171,7 +171,7 @@ export default function Carousel_Swiper(){
     
                                         <div className={`flex flex-col items-center pb-5 `}>
                                             <Image src={mascaras_3} alt="design" height={1000} width={1000} className="w-24 h-24 mt-4  mb-3 " />
-                                            <p>ARPON DIVECOME SP´LENDA</p>                                             
+                                            <p style={{borderBottom:"solid black 3px",paddingBottom:"2px", }}>ARPON DIVECOME SP´LENDA</p>                                             
     
                                                                 
                                             </div>
