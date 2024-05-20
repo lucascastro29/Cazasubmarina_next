@@ -1,24 +1,20 @@
-import Image from 'next/image';
-import React from 'react';
+import { useRouter } from 'next/navigation'
 
-const ProductCard = ({ product }) => {
+export default function ProductCard({ product, index })  {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/equipos/${index}`);
+  };
+
   return (
-    <div className=" p-4 ">
-      
-      <Image
-        src={`${product.image[0]}`}
-        alt={product}
-        layout="responsive"
-        width={200}
-        height={100}
-        className="transition-transform duration-300 transform-gpu p-4"
-       
-      />
-      <p>{product.description}</p>
-      <h2 className="text-lg font-semibold " style={{borderBottom:"solid black 3px",paddingBottom:"2px"}}>{product.name}</h2>
-
+    <div onClick={handleClick} className="cursor-pointer">
+      <div className="border rounded-md p-4">
+        <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-4" />
+        <h2 className="text-lg font-semibold">{product.name}</h2>
+        <p>{product.description}</p>
+      </div>
     </div>
   );
 };
 
-export default ProductCard;
