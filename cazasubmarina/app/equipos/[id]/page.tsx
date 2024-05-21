@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
+import ProductCard from '@/app/ui/equipos/ProductCard';
 
 interface Product {
   id: number;
@@ -16,11 +17,13 @@ interface Product {
 
 const ProductDetail = ({ params }: { params: { id: string } }) => {
 
-  const id = params.id;
+  const id = Number(params.id);
   const [product, setProduct] = useState<Product | null>(null);
   const [prevProduct, setPrevProduct] = useState<Product | null>(null);
   const [nextProduct, setNextProduct] = useState<Product | null>(null);
-
+ 
+  let prevProductId;
+  let nextProductId;
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,8 +32,9 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
         const currentProduct = products[id];
         setProduct(currentProduct);
 
-        const prevProductId = id > 0 ? id - 1 : null;
-        const nextProductId = id < products.length - 1 ? id + 1 : null;
+        
+         prevProductId = id > 0 ? id - 1 : 84;
+         nextProductId = id < products.length - 1 ? id + 1 : 0;
         setPrevProduct(prevProductId !== null ? products[prevProductId] : null);
         setNextProduct(nextProductId !== null ? products[nextProductId] : null);
       } catch (error) {
@@ -78,39 +82,20 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
           </div>
         </div>
       </div>
-      
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
       {prevProduct && (
-        <div className="mt-8">
-          <h3 className="text-xl font-bold mb-2">Previous Product</h3>
-          <div>{prevProduct.name}</div>
-          <div>{prevProduct.description}</div>
-          <Image
-          alt='image_alt'
-            src={`${prevProduct.image[0]}`}
-            layout="responsive"
-            width={50}
-            height={25}
-            className="transition-transform duration-300 transform-gpu p-4"
-          
-          />        
-          </div>
+                          <ProductCard product={prevProduct} index={prevProductId} />
+
       )}
 
       {nextProduct && (
-        <div className="mt-8">
-          <h3 className="text-xl font-bold mb-2">Next Product</h3>
-          <div>{nextProduct.name}</div>
-          <div>{nextProduct.description}</div>
-          <Image
-          alt='image_alt'
-            src={`${nextProduct.image[0]}`}
-            layout="responsive"
-            width={0}
-            height={0}
-            className="transition-transform w-24 h-24 duration-300 transform-gpu p-4"
-          
-          />          </div>
+                          <ProductCard product={nextProduct} index={nextProductId} />
+
       )}
+      </div>
+      
+     
     </div>
   );
 };

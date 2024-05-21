@@ -66,9 +66,14 @@ export default function EquiposPage() {
   return (
     <div className="container mx-auto py-8">
       <div className={kanit.className}>
-        <h1 className="text-2xl font-semibold mb-4">EQUIPOS</h1>
-
-        <div className="flex flex-wrap gap-4 mb-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="lg:col-span-1 ">
+      <div className="border  mb-4 p-6 bg-white">
+      <div className=" p-4 mb-4 flex justify-between items-center">
+        <h1 className="text-2xl font-semibold">CATEGORÍAS</h1>
+        <button onClick={() => {setFilteredProducts([]); setSearchTerm('');}} className="px-4 py-2 bg-blue-500 text-white rounded-md">Limpiar</button>
+      </div>
+        <div className="grid grid-cols-2 gap-4">
           {categorias.map((categoria, index) => (
             <CategoryCard
               key={index}
@@ -76,16 +81,24 @@ export default function EquiposPage() {
               onClick={() => filterProductsByCategory(categoria)}
             />
           ))}
-          <button onClick={() => { setFilteredProducts([]); setSearchTerm(''); }}>Mostrar todos</button>
         </div>
+      </div>
+      
+    </div>
+    <div className="lg:col-span-2 bg-white">
+    <div className="mt-4 mb-4 p-4">
         <input
           type="text"
           placeholder="BUSCAR EQUIPOS..."
           value={searchTerm}
           onChange={handleSearch}
-          className="border border-gray-300 px-3 py-1 rounded-md mb-4 focus:outline-none"
+          
+          
+          className="border border-none px-3 py-1 w-full  focus:outline-none focus:ring-0 text-2xl"
+          style={{borderBottom:"solid black 3px",paddingBottom:"2px", }}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
           {filteredProducts.length > 0
             ? filteredProducts.map((product, index) => (
                 <ProductCard key={index} product={product} index={index} />
@@ -94,6 +107,10 @@ export default function EquiposPage() {
                   <ProductCard key={index} product={product} index={index} />
                 ))}
         </div>
+        </div>
+        
+        </div>
+        
       </div>
     </div>
   );
