@@ -68,7 +68,7 @@ export default function Page() {
             <li className={kanit.className}>
               <Link
                 href={"/Cursos"} 
-                className="block py-2 px-3 md:p-0 text-black rounded hover:bg-gray-100 hover:text-red md:hover:bg-transparent md:hover:text-red-700 d:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 px-3 md:p-0 text-black  rounded hover:bg-gray-100 hover:text-red md:hover:bg-transparent md:hover:text-red-700 d:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 CURSOS
               </Link>

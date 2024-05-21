@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation'
 import CategoryCard from '../ui/equipos/CategoryCard';
@@ -43,7 +44,7 @@ export default function EquiposPage() {
     setSearchTerm('');
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = (e:any) => {
     setSearchTerm(e.target.value);
     if (e.target.value === '') {
       setFilteredProducts([]);
@@ -57,41 +58,42 @@ export default function EquiposPage() {
     }
   };
 
-  const handleProductClick = (index) => {
-    router.push(`/Equipos/${index}`);
+  const handleProductClick = (index:number) => {
+    console.log(index+"aaaaa")
+    router.push(`/equipos/${index}`);
   };
 
   return (
-    <div className={`container mx-auto py-8 ${kanit.className}`}>
-      <h1 className="text-2xl font-semibold mb-4">EQUIPOS</h1>
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex flex-wrap gap-4">
+    <div className="container mx-auto py-8">
+      <div className={kanit.className}>
+        <h1 className="text-2xl font-semibold mb-4">EQUIPOS</h1>
+
+        <div className="flex flex-wrap gap-4 mb-4">
           {categorias.map((categoria, index) => (
             <CategoryCard
               key={index}
               category={categoria}
               onClick={() => filterProductsByCategory(categoria)}
-              className="text-sm p-2"
             />
           ))}
+          <button onClick={() => { setFilteredProducts([]); setSearchTerm(''); }}>Mostrar todos</button>
         </div>
-        <button onClick={() => { setFilteredProducts([]); setSearchTerm(''); }} className="text-sm p-2 border">Mostrar todos</button>
-      </div>
-      <input
-        type="text"
-        placeholder="BUSCAR EQUIPOS..."
-        value={searchTerm}
-        onChange={handleSearch}
-        className="border border-gray-300 px-3 py-1 rounded-md mb-4 focus:outline-none focus:ring-0"
-      />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filteredProducts.length > 0
-          ? filteredProducts.map((product, index) => (
-            <ProductCard key={index} product={product} onClick={() => handleProductClick(index)} />
-          ))
-          : products.map((product, index) => (
-            <ProductCard key={index} product={product} onClick={() => handleProductClick(index)} />
-          ))}
+        <input
+          type="text"
+          placeholder="BUSCAR EQUIPOS..."
+          value={searchTerm}
+          onChange={handleSearch}
+          className="border border-gray-300 px-3 py-1 rounded-md mb-4 focus:outline-none"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filteredProducts.length > 0
+            ? filteredProducts.map((product, index) => (
+                <ProductCard key={index} product={product} index={index} />
+              ))
+              : products.map((product, index) => (
+                  <ProductCard key={index} product={product} index={index} />
+                ))}
+        </div>
       </div>
     </div>
   );
