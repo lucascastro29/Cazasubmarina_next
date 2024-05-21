@@ -14,6 +14,7 @@ export default function ProductCard({ product, index })  {
     <div onClick={handleClick} className="cursor-pointer">
       
     <Image
+    alt='image_alt'
       src={`${product.image[0]}`}
       layout="responsive"
       width={200}
