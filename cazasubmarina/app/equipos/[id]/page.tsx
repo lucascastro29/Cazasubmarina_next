@@ -18,7 +18,7 @@ interface Product {
 const ProductDetail = ({ params }: { params: { id: string } }) => {
 
   const id = Number(params.id);
-  const [product, setProduct] = useState<Product | null>(null);
+  const [product, setProduct] = useState<Product | any>({image:"/"});
   const [prevProduct, setPrevProduct] = useState<Product | null>(null);
   const [nextProduct, setNextProduct] = useState<Product | null>(null);
  

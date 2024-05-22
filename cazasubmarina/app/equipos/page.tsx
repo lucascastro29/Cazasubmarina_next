@@ -13,8 +13,8 @@ const kanit = Kanit({
 });
 
 const categorias = [
-  'Accesorios', 'Aletas', 'Arpones', 'Bolsos', 'Boyas', 'Cinturones', 'Cuchillos', 'Lastres',
-  'Linternas', 'Mascaras', 'Neoprenos', 'Relojes', 'Respiradores', 'Trajes'
+  'ACCESORIOS', 'ALETAS', 'ARPONES', 'BOLSOS', 'BOYAS', 'CINTURONES', 'CUCHILLOS', 'LASTRES',
+  'LINTERNAS', 'MASCARAS', 'NEOPRENOS', 'RELOJES', 'RESPIRADORES', 'TRAJES'
 ];
 
 export default function EquiposPage() {
@@ -103,9 +103,7 @@ export default function EquiposPage() {
             ? filteredProducts.map((product, index) => (
                 <ProductCard key={index} product={product} index={index} />
               ))
-              : products.map((product, index) => (
-                  <ProductCard key={index} product={product} index={index} />
-                ))}
+              : <div></div>}
         </div>
         </div>
         

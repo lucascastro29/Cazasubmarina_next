@@ -19,17 +19,16 @@ const CategoryCard = ({ category, onClick }) => {
         height={100}
         className="transition-transform duration-300 transform-gpu"
         style={{
-          filter: hovered ? 'grayscale(80%)' : 'none',
           transform: hovered ? 'scale(1.1)' : 'scale(1)',
           transition:"all 0.5s"
         }}
       />
-      {hovered && (
-        <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg  " 
+      
+        <div className="absolute top-0 p-3 left-0 right-0 bottom-0 flex items-start justify-start  text-white" style={{fontSize:"20px"}} 
         >
           {category}
         </div>
-      )}
+      
     </div>
   );
 };
