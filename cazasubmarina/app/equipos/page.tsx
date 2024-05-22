@@ -12,10 +12,9 @@ const kanit = Kanit({
   subsets: ['latin']
 });
 
-const categorias = [
-  'ACCESORIOS', 'ALETAS', 'ARPONES', 'BOLSOS', 'BOYAS', 'CINTURONES', 'CUCHILLOS', 'LASTRES',
-  'LINTERNAS', 'MASCARAS', 'NEOPRENOS', 'RELOJES', 'RESPIRADORES', 'TRAJES'
-];
+const categorias = [ 'ACCESORIOS', 'ALETAS', 'ARPONES', 'BOLSOS', 'BOYAS', 'CINTURONES', 'CUCHILLOS', 'LASTRES',
+'LINTERNAS', 'MASCARAS', 'NEOPRENOS', 'RELOJES', 'RESPIRADORES', 'TRAJES'
+]
 
 export default function EquiposPage() {
   const [products, setProducts] = useState([]);
@@ -24,44 +23,44 @@ export default function EquiposPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const router = useRouter();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://lucascastro29.github.io/json_products_cazasubmarina/');
-        setProducts(response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
+  
+ useEffect(()=>{
 
-    fetchData();
-  }, []);
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://lucascastro29.github.io/json_products_cazasubmarina/');
+      setProducts( response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+  fetchData()
+ },[])
 
-  const filterProductsByCategory = (category) => {
-    const filtered = products.filter(product => product.category === category);
+  const filterProductsByCategory = (category: any) => {
+    const filtered = products.filter(product => product.category.toLowerCase() === category.toLowerCase());
     setFilteredProducts(filtered);
     setFilteredCategory(category);
     setSearchTerm('');
   };
 
-  const handleSearch = (e:any) => {
+
+  const handleSearch = (e) => {
     setSearchTerm(e.target.value);
     if (e.target.value === '') {
       setFilteredProducts([]);
       setFilteredCategory(null);
     } else {
-      const filtered = products.filter(product =>
+      
+      const filtered = products.filter( product =>
         product.name.toLowerCase().includes(e.target.value.toLowerCase())
       );
       setFilteredProducts(filtered);
       setFilteredCategory(null);
-    }
+      
+    }  
   };
 
-  const handleProductClick = (index:number) => {
-    console.log(index+"aaaaa")
-    router.push(`/equipos/${index}`);
-  };
 
   return (
     <div className="container mx-auto py-8">
@@ -99,11 +98,15 @@ export default function EquiposPage() {
         />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-          {filteredProducts.length > 0
+          {  
+            filteredProducts.length > 0
             ? filteredProducts.map((product, index) => (
                 <ProductCard key={index} product={product} index={index} />
               ))
-              : <div></div>}
+              : products.map((product, index) => (
+                <ProductCard key={index} product={product} index={index}/>))
+          
+ }
         </div>
         </div>
         

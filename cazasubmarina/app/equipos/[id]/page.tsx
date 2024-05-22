@@ -21,9 +21,11 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
   const [product, setProduct] = useState<Product | any>({image:"/"});
   const [prevProduct, setPrevProduct] = useState<Product | null>(null);
   const [nextProduct, setNextProduct] = useState<Product | null>(null);
- 
-  let prevProductId;
-  let nextProductId;
+  const [prevProductIdN, setPrevProductId] = useState(id);
+  const [nextProductIdN, setNextProductId] = useState(id);
+  
+  let prevProductId:number;
+  let nextProductId:number;
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -35,6 +37,8 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
         
          prevProductId = id > 0 ? id - 1 : 84;
          nextProductId = id < products.length - 1 ? id + 1 : 0;
+         id > 0 ? setPrevProductId(id - 1) : setPrevProductId(84);
+         id < products.length - 1 ? setNextProductId(id + 1) : setNextProductId(0);
         setPrevProduct(prevProductId !== null ? products[prevProductId] : null);
         setNextProduct(nextProductId !== null ? products[nextProductId] : null);
       } catch (error) {
@@ -85,12 +89,12 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
       {prevProduct && (
-                          <ProductCard product={prevProduct} index={prevProductId} />
+                          <ProductCard product={prevProduct} index={prevProductIdN} />
 
       )}
 
       {nextProduct && (
-                          <ProductCard product={nextProduct} index={nextProductId} />
+                          <ProductCard product={nextProduct} index={nextProductIdN} />
 
       )}
       </div>
