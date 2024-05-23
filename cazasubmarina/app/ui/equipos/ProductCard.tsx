@@ -29,11 +29,10 @@ export default function ProductCard({ product, index })  {
       layout="responsive"
       width={200}
       height={100}
-      className="transition-transform duration-300 transform-gpu p-4"
+      className="transition-transform duration-300 transform-gpu p-4 pl-0"
       
      
     />
-    <p>{product.description}</p>
 
   </div>
   );

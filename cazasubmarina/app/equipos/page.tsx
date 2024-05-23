@@ -40,15 +40,7 @@ export default function EquiposPage() {
 
 
   
-function spread(){
-  let i=0;
-  products.map((element)=>{
-   setProducts(element=>({...element ,ID:i}))
-   i++
-  })
-  console.log(products);}
  
-  spread();
 
  },[])
   const filterProductsByCategory = (category: any) => {
@@ -117,10 +109,10 @@ function spread(){
           {  
             filteredProducts.length > 0
             ? filteredProducts.map((product, index) => (
-                <ProductCard key={index} product={product} index={index} />
+                <ProductCard key={index} product={product} index={(Number(product.id))} />
               ))
               : products.map((product, index) => (
-                <ProductCard key={index} product={product} index={index}/>))
+                <ProductCard key={index} product={product} index={Number(product.id)}/>))
           
  }
         </div>

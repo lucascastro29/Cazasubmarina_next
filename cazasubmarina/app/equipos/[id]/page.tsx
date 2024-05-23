@@ -55,27 +55,28 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
 
   return (
     <div className="container mx-auto py-8 px-4">
-      <Link href={"/equipos"} className="text-blue-500 hover:underline mb-4">
+      <Link href={"/equipos"} className="text-blue-500 hover:underline  ml-14">
         &larr; Back to products
       </Link>
-      <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        <div className="md:flex">
-          <div className="md:flex-shrink-0">
+      <div className="bg-white shadow-md rounded-lg overflow-hidden m-14">
+        <div className="grid grid-cols-2">
+          <div className="">
           <Image
           alt='image_alt'
             src={`${product.image[0]}`}
             layout="responsive"
-            width={200}
-            height={100}
-            className="transition-transform duration-300 transform-gpu p-4"
+            width={10}
+            height={10}
+            className=" p-4"
           
           />
               </div>
-          <div className="p-8">
+          <div className=" p-8">
             <h2 className="text-2xl font-bold mb-2">{product.name}</h2>
-            <p className="text-gray-700 mb-4">{product.description}</p>
-            <div className="text-lg font-semibold mb-4">
-              <span className="text-gray-900">Price: </span>${product.price}
+            
+            
+            <div className=" mb-4 text-gray-600"style={{fontSize:"15px"}}>
+              {product.description }
             </div>
             <div className="text-sm text-gray-600 mb-4">
               <span className="text-gray-900">Category: </span>{product.category}
@@ -86,9 +87,15 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      
+        <div className='d-flex' >
+          <div className='ml-14' style={{width:"60%"}}>
+     <h2 className=" font-semibold " style={{borderBottom:"solid black 3px",fontSize:"20px",paddingBottom:"2px"}}>PRODUCTOS RELACIONADOS</h2>
 
-      {prevProduct && (
+          </div>
+
+     <div className="grid grid-cols-4 mt-0 m-8 sm:grid-cols-4 p-4 gap-4">
+     {prevProduct && (
                           <ProductCard product={prevProduct} index={prevProductIdN} />
 
       )}
@@ -98,6 +105,8 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
 
       )}
       </div>
+        </div>
+     
       
      
     </div>
