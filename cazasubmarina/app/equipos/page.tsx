@@ -55,6 +55,8 @@ export default function EquiposPage() {
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
+    console.log(    setSearchTerm(e.target.value)
+  )
     if (e.target.value === '') {
       setFilteredProducts([]);
       setFilteredCategory(null);

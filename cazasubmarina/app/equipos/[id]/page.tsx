@@ -88,13 +88,13 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
         </div>
       </div>
       
-        <div className='d-flex' >
-          <div className='ml-14' style={{width:"60%"}}>
-     <h2 className=" font-semibold " style={{borderBottom:"solid black 3px",fontSize:"20px",paddingBottom:"2px"}}>PRODUCTOS RELACIONADOS</h2>
+        <div className='bg-white shadow-md rounded-lg overflow-hidden m-14 p-4 ' style={{width:"80%"}} >
+          <div className='m-4' style={{width:"80%"}}>
+     <h2 className=" font-semibold " style={{borderBottom:"solid black 3px",fontSize:"25px",paddingBottom:"2px"}}>PRODUCTOS RELACIONADOS</h2>
 
           </div>
 
-     <div className="grid grid-cols-4 mt-0 m-8 sm:grid-cols-4 p-4 gap-4">
+     <div className="grid grid-cols-4  sm:grid-cols-4 p-2 gap-4">
      {prevProduct && (
                           <ProductCard product={prevProduct} index={prevProductIdN} />
 

@@ -22,17 +22,19 @@ export default function ProductCard({ product, index })  {
       }}
     >
         <h2 className="text-lg font-semibold " style={{borderBottom:"solid black 3px",paddingBottom:"2px"}}>{product.name}</h2>
-  
-    <Image
+  <div className="md:w-3/2">
+  <Image
     alt='image_alt'
       src={`${product.image[0]}`}
       layout="responsive"
       width={200}
       height={100}
-      className="transition-transform duration-300 transform-gpu p-4 pl-0"
+      className="transition-transform duration-300 transform-gpu p-4 pl-0 w-full h-full object-cover"
       
      
     />
+  </div>
+    
 
   </div>
   );
