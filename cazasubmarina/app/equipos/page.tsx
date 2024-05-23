@@ -29,20 +29,36 @@ export default function EquiposPage() {
   const fetchData = async () => {
     try {
       const response = await axios.get('https://lucascastro29.github.io/json_products_cazasubmarina/');
-      setProducts( response.data);
+      
+      setProducts(response.data)
+      
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
   fetchData()
- },[])
 
+
+  
+function spread(){
+  let i=0;
+  products.map((element)=>{
+   setProducts(element=>({...element ,ID:i}))
+   i++
+  })
+  console.log(products);}
+ 
+  spread();
+
+ },[])
   const filterProductsByCategory = (category: any) => {
     const filtered = products.filter(product => product.category.toLowerCase() === category.toLowerCase());
     setFilteredProducts(filtered);
     setFilteredCategory(category);
     setSearchTerm('');
   };
+
+
 
 
   const handleSearch = (e) => {
