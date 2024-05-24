@@ -1,48 +1,65 @@
+'use client'
+import { useEffect, useRef } from 'react';
 import carrousel_Image_1 from "@/public/img/carrousel_home/1.jpg"
 import carrousel_Image_1_0 from "@/public/img/carrousel_home/2.jpg"
+import Image from "next/image";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Link from 'next/link';
 
-import Image from "next/image"
+export default function CarouselComponent() {
+    const parallaxRef = useRef(null);
 
-export default function carousel(){
+    
+  useEffect(() => {
+    const handleMouseMove = (event: { clientX: any; clientY: any; }) => {
+      if (parallaxRef.current) {
+        const { clientX, clientY } = event;
+        const { innerWidth, innerHeight } = window;
+        const xPos = (clientX / innerWidth) * 100;
+        const yPos = (clientY / innerHeight) * 100;
+        parallaxRef.current.style.transform = `translate(-${xPos / 10}%, -${yPos / 10}%)`;
+      }
+    };
 
-    return(
-        <div id="default-carousel" className="relative w-auto"  data-carousel="slide">
-        <div className="relative  overflow-hidden "style={{height:"785px"}}>
-            
-            
-            <div className=" duration-700 ease-in-out h-fit" data-carousel-item>
-            <div className="relative  w-full sm:block hidden h-fit " >   
-   <Image alt="fondo_image" className=" z-0 absolute sm:block hidden  "  height={1080} width={1920} src={carrousel_Image_1}/>
-                <div className="relative  ">
-                    <Image alt="fondo_image" className=" sm:block hidden absolute top-0 right-0 bottom-10 opacity-75"   height={3000} width={497} src={carrousel_Image_1_0}/>
-                </div>
+    window.addEventListener('mousemove', handleMouseMove);
 
-    </div>           
-     </div>
-            <div className=" duration-700 ease-in-out" data-carousel-item>
-    <Image alt="fondo_image" className="sm:block hidden  "  src={carrousel_Image_1}/>
-            </div>
-            <div className="duration-700 ease-in-out" data-carousel-item>
-    <Image alt="fondo_image" className="sm:block hidden  "   height={1080} width={1920} src={carrousel_Image_1}/>
-            </div>
-            <div className="duration-700 ease-in-out" data-carousel-item>
-    <Image alt="fondo_image" className="sm:block hidden "   height={1080} width={1920} src={carrousel_Image_1}/>
-            </div>
-            
-           
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
-        </div>
-        <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-            <button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-            <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-            <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-            <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+  return (
+    <div className="relative w-full  h-full">
+      <Carousel
+        autoPlay
+        infiniteLoop
+        showThumbs={false}
+        showArrows={false}
+        showStatus={false}
+        className=" shadow-lg"
+      >
+        <div className="relative group ">
+        <div ref={parallaxRef} className="absolute w-96 h-96 bg-blue-500 opacity-75" style={{ zIndex: 10, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}></div>
+
+          <Link href="/Cursos" className="block relative h-96 md:h-[800px]">
+              <Image alt="Cursos" src={carrousel_Image_1} layout="fill" objectFit="cover" className="transform transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent opacity-75 p-4 rounded-b-lg">
+                <h2 className="text-white text-2xl font-bold">Cursos</h2>
+              </div>
+          </Link>
+          </div>
+        <div className="relative group">
+          <Link href="/equipos" className="block relative h-96 md:h-[800px]">
+              <Image alt="Productos" src={carrousel_Image_1_0} layout="fill" objectFit="cover" className="transform transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent opacity-75 p-4 rounded-b-lg">
+                <h2 className="text-white text-2xl font-bold">Productos</h2>
+              </div>
+          </Link>
         </div>
         
-        <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-
-
+      </Carousel>
+      
     </div>
-  
-        )
+  )
 }
