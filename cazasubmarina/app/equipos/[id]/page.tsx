@@ -72,12 +72,12 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
           />
               </div>
           <div className=" p-8">
-            <h2 className="text-2xl font-bold mb-2">{product.name}</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 ">{product.name}</h2>
+
             
-            
-            <div className=" mb-4 text-gray-600"style={{fontSize:"15px"}}>
+            <p className="text-lg text-gray-600 leading-relaxed">
               {product.description }
-            </div>
+            </p>
             <div className="text-sm text-gray-600 mb-4">
               <span className="text-gray-900">Category: </span>{product.category}
             </div>

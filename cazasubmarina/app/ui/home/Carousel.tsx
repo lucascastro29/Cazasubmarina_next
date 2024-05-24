@@ -10,25 +10,23 @@ import Link from 'next/link';
 export default function CarouselComponent() {
     const parallaxRef = useRef(null);
 
-    
-  useEffect(() => {
-    const handleMouseMove = (event: { clientX: any; clientY: any; }) => {
-      if (parallaxRef.current) {
-        const { clientX, clientY } = event;
-        const { innerWidth, innerHeight } = window;
-        const xPos = (clientX / innerWidth) * 100;
-        const yPos = (clientY / innerHeight) * 100;
-        parallaxRef.current.style.transform = `translate(-${xPos / 10}%, -${yPos / 10}%)`;
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
+    useEffect(() => {
+      const handleMouseMove = (event) => {
+        if (parallaxRef.current) {
+          const { clientX, clientY } = event;
+          const { innerWidth, innerHeight } = window;
+          const xPos = (clientX / innerWidth) * 100;
+          const yPos = (clientY / innerHeight) * 100;
+          parallaxRef.current.style.transform = `translate(${xPos / 10}%, ${yPos / 10}%)`;
+        }
+      };
+  
+      window.addEventListener('mousemove', handleMouseMove);
+  
+      return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+      };
+    }, []);
   return (
     <div className="relative w-full  h-full">
       <Carousel
