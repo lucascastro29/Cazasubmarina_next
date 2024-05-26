@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 import ProductCard from '@/app/ui/equipos/ProductCard';
@@ -112,24 +111,23 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
         </div>
       </div>
       
-        <div className='bg-white shadow-md rounded-lg overflow-hidden m-14 p-4 ' style={{width:"80%"}} >
+        <div className='bg-white  shadow-md rounded-lg overflow-hidden m-14 p-4 ' style={{width:"80%"}} >
           <div className='m-4' style={{width:"80%"}}>
      <h2 className=" font-semibold " style={{borderBottom:"solid black 3px",fontSize:"25px",paddingBottom:"2px"}}>PRODUCTOS RELACIONADOS</h2>
 
           </div>
 
-     <div className="grid grid-cols-4  sm:grid-cols-4 p-2 gap-4">
-     {prevProduct && (
+      <div className='grid grid-cols-3'>{prevProduct && (
                           <ProductCard product={prevProduct} index={prevProductIdN} />
 
-      )}
+      )} {nextProduct && (
+        <ProductCard product={nextProduct} index={nextProductIdN} />
 
-      {nextProduct && (
-                          <ProductCard product={nextProduct} index={nextProductIdN} />
+)}</div>
+     
 
-      )}
+     
       </div>
-        </div>
      
       
      
