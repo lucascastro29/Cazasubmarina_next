@@ -18,12 +18,18 @@ const cursosApnea = [
 ];
 
 const cursosCazasubmarina = [
-  { id: 1, name: 'INTRODUCCIÓN', description: 'Curso de cazasubmarina...',
+  { id: 1, name: 'INICIACIÓN', description: 'Curso de cazasubmarina...',
     image: cazasub_course 
   },
   { id: 2, name: 'CURSO', description: 'Curso de cazasubmarina...',
     image: cazasub_course 
   },
+  { id: 2, name: 'SALIDA GUIADA', description: 'Curso de cazasubmarina...',
+  image: cazasub_course 
+},
+{ id: 2, name: 'SALIDA NOCTURNA', description: 'Curso de cazasubmarina...',
+image: cazasub_course 
+},
 ];
 
 export default function Page(){
@@ -40,11 +46,10 @@ export default function Page(){
     setModalOpen(false);
   };
 
-  return (
-    <div className="container mx-auto mt-8">
-      
-      {/* Sección de Apnea */}
-      <section className="mb-12">
+  return ( 
+    <div className="container mx-auto  mt-8">
+      <div className='grid grid-cols-2 gap-8'>{/* Sección de Apnea */}
+      <section className="mb-12"  id='#cazasub'>
         <h2 className="text-3xl font-bold mb-4">Cursos de Apnea</h2>
         <div className="flex flex-col md:flex-row mb-6">
           <img src={apnea_course.src} alt="Cursos de Apnea" className="w-full md:w-1/2 h-auto rounded-lg" />
@@ -58,9 +63,8 @@ export default function Page(){
           ))}
         </div>
       </section>
-
-      {/* Sección de Cazasubmarina */}
-      <section className="mb-12">
+       {/* Sección de Cazasubmarina */}
+       <section className="mb-12" id='#cazasub'>
         <h2 className="text-2xl font-bold mb-4">Cursos de Cazasubmarina</h2>
         <div className="flex flex-col md:flex-row mb-6">
           <img src={cazasub_course.src} alt="Cursos de Cazasubmarina" className="w-full md:w-1/2 h-auto rounded-lg" />
@@ -68,12 +72,15 @@ export default function Page(){
             <p>Aventúrate y descubre las profundidades. Ofrecemos una variedad de cursos de cazasubmarina adaptados a todos los niveles, desde principiantes hasta expertos.</p>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {cursosCazasubmarina.map((course) => (
             <CourseCard key={course.id} course={course} onOpenModal={handleOpenModal} />
           ))}
         </div>
-      </section>
+      </section></div>
+      
+
+     
 
       {modalOpen && <CourseModal course={selectedCourse} onCloseModal={handleCloseModal} />}
     </div>
