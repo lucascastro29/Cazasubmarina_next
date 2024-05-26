@@ -11,6 +11,7 @@ import Link from 'next/link';
 export default function CarouselComponent() {
   const parallaxRef = useRef(null);
 
+  
   useEffect(() => {
     const handleMouseMove = (event:any) => {
       if (parallaxRef.current) {

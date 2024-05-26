@@ -7,10 +7,31 @@ import apnea_course from "@/public/img/diseños/apnea_course.jpg"
 
 const cursos = [
   { id: 1, name: 'Apnea', description: 'Curso de apnea...',
-  image:apnea_course 
+  image:apnea_course ,subcursos:[
+    { id: 1, name: 'CURSO', description: 'Curso de apnea...',
+    image:apnea_course 
+   },
+    { id: 2, name: 'ENTRENAMIENTO APNEA', description: 'Curso de cazasubmarina...'
+      ,  image: cazasub_course
+  
+     },
+     { id: 2, name: 'ENTRENAMIENTO PISCINA', description: 'Curso de cazasubmarina...'
+       ,  image: cazasub_course
+   
+      },
+  ],
  },
   { id: 2, name: 'Cazasubmarina', description: 'Curso de cazasubmarina...'
-    ,  image: cazasub_course
+    ,  image: cazasub_course,
+    subcursos:[
+      { id: 1, name: 'INTRODUCCIÓN', description: 'Curso de apnea...',
+      image:apnea_course 
+     },
+      { id: 2, name: 'CURSO', description: 'Curso de cazasubmarina...'
+        ,  image: cazasub_course
+    
+       },
+    ],
 
    },
 ];
@@ -41,4 +62,3 @@ export default function Page(){
     </div>
   );
 };
-

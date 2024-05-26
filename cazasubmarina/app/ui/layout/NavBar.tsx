@@ -17,7 +17,7 @@ export default function Page() {
   return (
     <nav
       className={`bg-white border-gray-200 dark:bg-gray-900 w-full `}
-      style={{ backgroundColor: "white",  
+      style={{ backgroundColor: "white", "boxShadow":" 0 -5px 10px -5px #333 "
     }}
       id="Home"
     >
@@ -95,6 +95,14 @@ export default function Page() {
                 className="block py-2 px-3 md:p-0 text-black rounded  hover:text-red hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 d:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 EVENTOS
+              </Link>
+            </li>
+            <li className={kanit.className}>
+              <Link
+                href={"/Eventos"}
+                className="block py-2 px-3 md:p-0 text-black rounded  hover:text-red hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 d:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >
+                VIAJES
               </Link>
             </li>
             <li className={kanit.className}>
