@@ -4,6 +4,17 @@ import CourseCard from '../ui/cursos/CourseCard';
 import CourseModal from '../ui/cursos/CourseModal';
 import cazasub_course from "@/public/img/diseños/cazasub_course.jpg"
 import apnea_course from "@/public/img/diseños/apnea_course.jpg"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+
+
+// import required modules
+import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 const cursosApnea = [
   { id: 1, name: 'CURSO', description: 'Curso de apnea...',
@@ -57,10 +68,33 @@ export default function Page(){
             <p>Descubre el mundo submarino con solo una respiración. Te brindamos el conocimiento y herramientas técnicas, para que tu experiencia resulte fácil, segura, divertida y relajada.</p>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div >
+        
+          
+      <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
+        className="grid grid-cols-1 md:grid-cols-3 gap-4"
+      >
           {cursosApnea.map((course) => (
+            <SwiperSlide>
             <CourseCard key={course.id} course={course} onOpenModal={handleOpenModal} />
+            </SwiperSlide>
           ))}
+        
+      </Swiper>
         </div>
       </section>
        {/* Sección de Cazasubmarina */}
@@ -72,11 +106,35 @@ export default function Page(){
             <p>Aventúrate y descubre las profundidades. Ofrecemos una variedad de cursos de cazasubmarina adaptados a todos los niveles, desde principiantes hasta expertos.</p>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div >
+
+        <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
+        className="grid grid-cols-1 md:grid-cols-3 gap-4"
+      >
           {cursosCazasubmarina.map((course) => (
+                        <SwiperSlide>
+
             <CourseCard key={course.id} course={course} onOpenModal={handleOpenModal} />
+            </SwiperSlide>
+
           ))}
-        </div>
+                </Swiper>
+                </div>
+
       </section></div>
       
 
