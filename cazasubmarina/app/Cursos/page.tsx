@@ -122,12 +122,11 @@ export default function Page(){
         }}
         pagination={true}
         modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
-        className="grid grid-cols-1 md:grid-cols-3 gap-4"
+        className="grid grid-cols-1 grid-cols-3 gap-4"
+
       >
           {cursosCazasubmarina.map((course) => (
-                        <SwiperSlide>
-
+                        <SwiperSlide          >
             <CourseCard key={course.id} course={course} onOpenModal={handleOpenModal} />
             </SwiperSlide>
 
