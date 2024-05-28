@@ -15,6 +15,7 @@ import 'swiper/css/effect-coverflow';
 
 // import required modules
 import { EffectCoverflow, Pagination } from 'swiper/modules';
+import FlipCard from '../ui/cursos/flipCard';
 
 const cursosApnea = [
   { id: 1, name: 'CURSO', description: 'Curso de apnea...',
@@ -127,11 +128,17 @@ export default function Page(){
       >
           {cursosCazasubmarina.map((course) => (
                         <SwiperSlide          >
+                           <FlipCard
+        imageUrl={course.image}
+        title="Card Title"
+        description="This is the description on the back of the card."
+      />
             <CourseCard key={course.id} course={course} onOpenModal={handleOpenModal} />
             </SwiperSlide>
 
           ))}
                 </Swiper>
+               
                 </div>
 
       </section></div>
