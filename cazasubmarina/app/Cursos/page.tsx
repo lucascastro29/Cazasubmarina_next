@@ -61,7 +61,7 @@ export default function Page(){
   return ( 
     <div className="container mx-auto  mt-8">
       <div className='grid grid-cols-2 gap-8'>{/* Sección de Apnea */}
-      <section className="mb-12"  id='#cazasub'>
+      <section className="mb-12 mr-4"  id='#cazasub'>
         <h2 className="text-3xl font-bold mb-4">Cursos de Apnea</h2>
         <div className="flex flex-col md:flex-row mb-6">
           <img src={apnea_course.src} alt="Cursos de Apnea" className="w-full md:w-1/2 h-auto rounded-lg" />
@@ -76,21 +76,23 @@ export default function Page(){
         effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={'auto'}
+        slidesPerView={2}
+        initialSlide={1}
+
         coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
+          rotate: 25,
+          stretch: 15,
+          depth: 110,
+          modifier: 3,
+          slideShadows: false,
+
         }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
-        className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          modules={[EffectCoverflow, Pagination]}
       >
           {cursosApnea.map((course) => (
-            <SwiperSlide>
+            <SwiperSlide style={{backgroundColor:"transparent",width:"100%"}}
+            >
             <CourseCard key={course.id} course={course} onOpenModal={handleOpenModal} />
             </SwiperSlide>
           ))}
@@ -99,7 +101,7 @@ export default function Page(){
         </div>
       </section>
        {/* Sección de Cazasubmarina */}
-       <section className="mb-12" id='#cazasub'>
+       <section className="mb-12 ml-4" id='#cazasub'>
         <h2 className="text-2xl font-bold mb-4">Cursos de Cazasubmarina</h2>
         <div className="flex flex-col md:flex-row mb-6">
           <img src={cazasub_course.src} alt="Cursos de Cazasubmarina" className="w-full md:w-1/2 h-auto rounded-lg" />
@@ -113,31 +115,26 @@ export default function Page(){
         effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={'auto'}
+        slidesPerView={2}
+        initialSlide={1}
         coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
-        className="grid grid-cols-1 grid-cols-3 gap-4"
+          rotate: 20,
+          stretch: 10,
+          depth: 110,
+          modifier: 3,
+          slideShadows: false,
 
+        }}
+          modules={[EffectCoverflow, Pagination]}
       >
           {cursosCazasubmarina.map((course) => (
-                        <SwiperSlide          >
-                           <FlipCard
-        imageUrl={course.image}
-        title="Card Title"
-        description="This is the description on the back of the card."
-      />
+            <SwiperSlide style={{padding:"0px", width:"100%",opacity:"4px" }}
+            >
             <CourseCard key={course.id} course={course} onOpenModal={handleOpenModal} />
             </SwiperSlide>
-
           ))}
-                </Swiper>
+        
+      </Swiper>
                
                 </div>
 
