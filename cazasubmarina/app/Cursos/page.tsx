@@ -80,7 +80,7 @@ export default function Page(){
         initialSlide={1}
 
         coverflowEffect={{
-          rotate: 25,
+          rotate: 22,
           stretch: 15,
           depth: 110,
           modifier: 3,
@@ -89,6 +89,8 @@ export default function Page(){
         }}
         className="mySwiper"
           modules={[EffectCoverflow, Pagination]}
+          pagination={true}
+
       >
           {cursosApnea.map((course) => (
             <SwiperSlide style={{backgroundColor:"transparent",width:"100%"}}
@@ -126,6 +128,8 @@ export default function Page(){
 
         }}
           modules={[EffectCoverflow, Pagination]}
+          pagination={true}
+
       >
           {cursosCazasubmarina.map((course) => (
             <SwiperSlide style={{padding:"0px", width:"100%",opacity:"4px" }}
