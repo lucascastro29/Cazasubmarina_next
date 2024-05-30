@@ -67,7 +67,7 @@ export default function courses(){
             </svg>
         </Link>
 
-    </div>
+        </div>
         </div>
         </Link>
 
