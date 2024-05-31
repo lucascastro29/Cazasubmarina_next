@@ -9,7 +9,7 @@ interface Course {
   image: string;
 }
 
-const CourseCard: React.FC<{ course: Course, onOpenModal: (course: Course) => void }> = ({ course }) => {
+const CourseCard: React.FC<{ course: Course, }> = ({ course }) => {
   const router = useRouter();
 
   const handleCardClick = () => {
@@ -18,35 +18,54 @@ const CourseCard: React.FC<{ course: Course, onOpenModal: (course: Course) => vo
 
   return (
     
-    <div className="flip-card-inner w-96 h-96" >
-      <div className="flip-card w-full h-full relative">
+    <div className=" w-96 h-96"
+    onClick={() => {  handleCardClick(); }}
+    >
+      <div className=" w-full h-full relative flex flex-col items-start justify-end text-center">
         {/* Front Side */}
+        <div className=" absolute w-full h-full shadow-xl rounded-lg overflow-hidden" >
+          <Image src={course.image}
+          alt={course.name}
+           layout="fill" objectFit="cover" className="rounded-lg" />
+        </div>
+        <div className="relative w-full flex flex-col bg-white text-black items-start justify-end z-10 p-4"style={{borderBottomLeftRadius: "7px",borderBottomRightRadius: "7px"}}>
+          <h2 className="text-lg font-semibold flex  flex-col items-start justify-end" style={{borderBottom:"red 2px solid" ,width:"100%"} }>{course.name}</h2>
+      <p className="text-gray-600">{course.description}</p>
+            
+          </div>
+       
+    </div>
+  </div>
+ 
+  );
+};
+
+export default CourseCard; 
+{/*
+<div className="flip-card-inner w-96 h-96"
+    onClick={() => {  handleCardClick(); }}
+    >
+      <div className="flip-card w-full h-full relative flex flex-col items-start justify-end text-center">
+        
         <div className="flip-card-front absolute w-full h-full shadow-lg rounded-lg overflow-hidden">
           <Image src={course.image}
           alt={course.name}
            layout="fill" objectFit="cover" className="rounded-lg" />
         </div>
-        {/* Back Side */}
-        <div className="flip-card-back absolute w-full h-full bg-black bg-opacity-70 shadow-lg rounded-lg flex flex-col items-center justify-center text-center p-4 text-white overflow-hidden">
+        <div className="relative w-full flex flex-col bg-white text-black items-start justify-end z-10 p-4">
+          <h2 className="text-lg font-semibold flex  flex-col items-start justify-end" style={{borderBottom:"red 2px solid" ,width:"100%"} }>{course.name}</h2>
+      <p className="text-gray-600">{course.description}</p>
+            
+          </div>
+        
+        <div className="flip-card-back absolute w-full h-full bg-black bg-opacity-90 shadow-lg rounded-lg flex flex-col items-start justify-end text-center  text-white overflow-hidden">
           <div className="absolute inset-0 transform scale-x-[-1]">
             <Image src={course.image}
           alt={course.name}
            layout="fill" objectFit="cover" className="rounded-lg opacity-10" />
           </div>
-          <div className="relative z-10">
-          <h2 className="text-lg font-semibold">{course.name}</h2>
-      <p className="text-gray-600">{course.description}</p>
-            <button
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-        onClick={(e) => { e.stopPropagation(); handleCardClick(); }}
-      >
-        Ver más
-      </button>
-          </div>
+          
         </div>
     </div>
   </div>
-  );
-};
-
-export default CourseCard;
+*/ };
