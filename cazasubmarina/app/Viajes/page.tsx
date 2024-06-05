@@ -3,7 +3,12 @@
 import React from 'react';
 import Carousel from '../ui/viajes/Carousel';
 import TripCard from '../ui/viajes/TripCard';
+import { Kanit } from 'next/font/google';
 
+const kanit = Kanit({
+  weight: '400',
+  subsets: ['latin']
+});
 const trips = [
   {
     image: 'https://via.placeholder.com/800x400',
@@ -26,7 +31,7 @@ const trips = [
 ];
 
 const TravelPage = () => {
-  return (
+  return (<div className={kanit.className}>
     <div className="container mx-auto py-8 px-4">
       <h1 className="text-3xl font-bold mb-6">VIAJES</h1>
       <Carousel />
@@ -41,6 +46,7 @@ const TravelPage = () => {
           />
         ))}
       </div>
+    </div>
     </div>
   );
 };

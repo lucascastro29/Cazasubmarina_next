@@ -12,8 +12,8 @@ const kanit = Kanit({
   subsets: ['latin']
 });
 
-const categorias = [ 'ACCESORIOS', 'ALETAS', 'ARPONES', 'BOLSOS', 'BOYAS', 'CINTURONES', 'CUCHILLOS', 'LASTRES',
-'LINTERNAS', 'MASCARAS', 'NEOPRENOS', 'RELOJES', 'RESPIRADORES', 'TRAJES'
+const categorias = [  'MASCARAS','ALETAS', 'ARPONES', 'RESPIRADORES', 'TRAJES', 'CUCHILLOS', 'RELOJES','BOYAS', 'CINTURONES', 'LASTRES','LINTERNAS',  'NEOPRENOS','ACCESORIOS', 'BOLSOS', 
+
 ]
 
 export default function EquiposPage() {

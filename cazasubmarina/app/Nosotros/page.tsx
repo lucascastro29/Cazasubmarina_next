@@ -3,7 +3,12 @@
 import React from 'react';
 import Carousel from '../ui/nosotros/Carousel';
 import InstructorCard from '../ui/nosotros/InstructorCard';
+import { Kanit } from 'next/font/google';
 
+const kanit = Kanit({
+  weight: '400',
+  subsets: ['latin']
+});
 const instructors = [
   {
     name: 'Juan Pérez',
@@ -21,7 +26,7 @@ const instructors = [
 ];
 
 export default function Page(){
-  return (
+  return (<div className={kanit.className}>
     <div className="container mx-auto py-8 px-4">
       {/* Sección ¿Quiénes Somos? */}
       <section className="mb-12">
@@ -94,6 +99,7 @@ export default function Page(){
           <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Enviar</button>
         </form>
       </section>
+    </div>
     </div>
   );
 };
