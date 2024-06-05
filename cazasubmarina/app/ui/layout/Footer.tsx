@@ -12,7 +12,7 @@ export default function Page() {
           <Image src={icon} width={100} height={100} alt="icon_image" />
         </Link> 
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-5 ">
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-6 ">
             <div className="h-full grid content-end">
               <ul className="text-gray-500 dark:text-gray-400 font-medium ">
                 <Link href="/Cursos" className=" hover:underline">
@@ -32,6 +32,13 @@ export default function Page() {
               <ul className="text-gray-500 dark:text-gray-400 font-medium ">
                 <Link href="/Galeria" className=" hover:underline">
                   GALERIA
+                </Link>
+              </ul>
+            </div>
+            <div className="h-full grid content-end">
+              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <Link href="/Viajes" className="hover:underline">
+                  VIAJES
                 </Link>
               </ul>
             </div>
