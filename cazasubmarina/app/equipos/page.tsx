@@ -94,7 +94,7 @@ export default function EquiposPage() {
       </div>
       
     </div>
-    <div className="lg:col-span-2 bg-white">
+    <div className="lg:col-span-2 border bg-white">
     <div className="mt-4 mb-4 p-4">
         <input
           type="text"
@@ -107,7 +107,7 @@ export default function EquiposPage() {
           style={{borderBottom:"solid black 3px",paddingBottom:"2px", }}
         />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
           {  
             filteredProducts.length > 0
             ? filteredProducts.map((product, index) => (
