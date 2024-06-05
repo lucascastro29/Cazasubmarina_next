@@ -80,7 +80,7 @@ export default function Page(){
     <div className="container mx-auto  mt-8">
       <div className='grid grid-cols-2 gap-8'>{/* Sección de Apnea */}
           <section className="mb-12 mr-4"  id='#cazasub'>
-            <h2 className="text-3xl  mb-4" style={{borderBottom:"3px solid black",width:"80%"}}>CURSOS DE APNEA</h2>
+            <h2 className="text-3xl  mb-4" style={{borderBottom:"3px solid black",width:"80%"}}>APNEA</h2>
             <div className="grid grid-cols-3">
             <div className=" grid cols-span-1 md:ml-6 text-lg text-start p-4 leading-relaxed">
                 <p>Descubre el mundo submarino con solo una respiración. Te brindamos el conocimiento y herramientas técnicas, para que tu experiencia resulte fácil, segura, divertida y relajada.</p>
@@ -171,7 +171,7 @@ export default function Page(){
         
           {/* Sección de Cazasubmarina */}
         <section className="mb-12 ml-4" id='#cazasub'>
-            <h2 className="text-3xl mb-4" style={{borderBottom:"3px solid black",width:"80%"}}>CURSOS DE CAZASUBMARINA</h2>
+            <h2 className="text-3xl mb-4" style={{borderBottom:"3px solid black",width:"80%"}}>CAZASUBMARINA</h2>
             <div className="grid grid-cols-3">
             <div className="md:ml-6 mt-6 md:mt-0 text-lg text-start p-4 leading-relaxed">
                 <p>Aventúrate y descubre las profundidades. Ofrecemos una variedad de cursos de cazasubmarina adaptados a todos los niveles, desde principiantes hasta expertos.</p>

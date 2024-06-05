@@ -36,6 +36,12 @@ const TravelPage = () => {
       <h1 className="text-3xl font-bold mb-6">VIAJES</h1>
       <Carousel />
       <div className="mt-8">
+      <section className="mb-12">
+        <h2 className="text-3xl font-bold mb-4">Viajes</h2>
+        <p className="text-gray-700 mb-4">
+          Al unirte a uno de nuestros cursos, te integras a una hermosa comunidad de cazadores submarinos y apneistas. Tendrás acceso a nuestro grupo de WhatsApp donde compartimos la visibilidad del agua en varias playas, organizamos salidas de caza y expediciones, y celebramos reuniones y comidas.
+        </p>
+      </section>
         {trips.map((trip, index) => (
           <TripCard
             key={index}
