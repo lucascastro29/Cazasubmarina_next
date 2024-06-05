@@ -1,14 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Parallax } from 'react-parallax';
 import Carousel from '../ui/viajes/Carousel';
 import TripCard from '../ui/viajes/TripCard';
-import { Kanit } from 'next/font/google';
 
-const kanit = Kanit({
-  weight: '400',
-  subsets: ['latin']
-});
 const trips = [
   {
     image: 'https://via.placeholder.com/800x400',
@@ -30,18 +26,37 @@ const trips = [
   },
 ];
 
-const TravelPage = () => {
-  return (<div className={kanit.className}>
+
+const TravelPage: React.FC = () => {
+  
+  return (
+    <>
     <div className="container mx-auto py-8 px-4">
-      <h1 className="text-3xl font-bold mb-6">VIAJES</h1>
+      <h1 className="text-3xl font-bold mb-6">Cazasubmarina Trips</h1>
       <Carousel />
+      
+      <section>
+  
+      <div id="yourimg1" className="card rounded is-out">
+        <div className="card__overlay"></div>
+        <div className="card__heading">
+          <img src="https://via.placeholder.com/1600x800" alt=''/>  
+          <span >Hover Me</span>
+          <h2>Your Image</h2>
+        </div>
+      </div>
+
+      <div id="yourimg2" className="card rounded is-out">
+        <div className="card__overlay"></div>
+        <div className="card__heading">
+          <img src="https://via.placeholder.com/1600x800" alt=''/> 
+          <span className="super">Hover Me</span>
+          <h2>Your Image</h2>
+        </div>
+      </div>
+</section>
+      
       <div className="mt-8">
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-4">Viajes</h2>
-        <p className="text-gray-700 mb-4">
-          Al unirte a uno de nuestros cursos, te integras a una hermosa comunidad de cazadores submarinos y apneistas. Tendrás acceso a nuestro grupo de WhatsApp donde compartimos la visibilidad del agua en varias playas, organizamos salidas de caza y expediciones, y celebramos reuniones y comidas.
-        </p>
-      </section>
         {trips.map((trip, index) => (
           <TripCard
             key={index}
@@ -52,8 +67,13 @@ const TravelPage = () => {
           />
         ))}
       </div>
+     
     </div>
-    </div>
+       
+
+     
+         
+</>         
   );
 };
 

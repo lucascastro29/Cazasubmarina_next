@@ -1,35 +1,47 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import carrousel_Image_1 from "@/public/img/carrousel_home/1.jpg";
+import carrousel_image from "@/public/img/Cursos_img/carrousel_cazasub/carouselimg_3_c.png"
 import carrousel_Image_1_0 from "@/public/img/carrousel_home/2.jpg";
 import Image from "next/image";
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Link from 'next/link';
+import imgGerardo from "@/public/img/diseños/Gerardo.png"
 
 export default function CarouselComponent() {
-  const parallaxRef = useRef(null);
 
+  const [backgroundPost,setbackgroundPost]=useState('')
   
   useEffect(() => {
-    const handleMouseMove = (event:any) => {
-      if (parallaxRef.current) {
-        const { clientX, clientY } = event;
-        const { innerWidth, innerHeight } = window;
-        const xPos = (clientX / innerWidth) * 100;
-        const yPos = (clientY / innerHeight) * 100;
-        parallaxRef.current.style.transform = `translate(-${xPos / 5}%, -${yPos / 5}%)`;
+    
+    function paralax() {
+      // Add event listener
+      document.addEventListener("mousemove", parallax);
+      // Magic happens here
+      function parallax(e: { clientX: any; clientY: any; }) {
+          let _w = window.innerWidth/2;
+          let _h = window.innerHeight/2;
+          let _mouseX = e.clientX;
+          let _mouseY = e.clientY;
+          let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
+          let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
+          let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
+          let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+          console.log(x);
+         
+          setbackgroundPost(x)
       }
-    };
+    
+    }
+    paralax()
+    
 
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
   }, []);
-
+  useEffect(()=>{
+  
+  },[])
   return (
     <div className="relative w-full h-full">
       <Carousel
@@ -40,33 +52,32 @@ export default function CarouselComponent() {
         showStatus={false}
         className="shadow-lg"
       >
-        <div className="relative group">
+        <div className="relative group" style={{height:"800px",width:"100%"}}>
           <div
-            ref={parallaxRef}
-            className="absolute w-96 h-96 bg-blue-500 opacity-75 rounded-lg"
+            className="absolute   rounded-lg"
+            id='parallax'
+            
             style={{
-              zIndex: 10,
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              transition: 'transform 0.1s ease-out'
+              zIndex: 1,
+              scale:"1.6",
+              backgroundPosition:backgroundPost
             }}
           ></div>
-          <Link href="/Cursos" className="block relative h-96 md:h-[800px]">
-            <Image
+          <div style={{height:"800px",width:"100%"}}>
+          <Image
               alt="Cursos"
-              src={carrousel_Image_1}
+              src={carrousel_image}
               layout="fill"
-              objectFit="cover"
-              className="transform transition-transform duration-500 group-hover:scale-105"
+              objectFit="cover" 
+              className="transform transition-transform duration-500   "
             />
+          </div>
+           
             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent opacity-75 p-4 rounded-b-lg">
               <h2 className="text-white text-2xl font-bold">Cursos</h2>
             </div>
-          </Link>
         </div>
-        <div className="relative group">
-          <Link href="/equipos" className="block relative h-96 md:h-[800px]">
+        <div className="relative group" style={{height:"800px",width:"100%"}}>
             <Image
               alt="Productos"
               src={carrousel_Image_1_0}
@@ -77,7 +88,6 @@ export default function CarouselComponent() {
             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent opacity-75 p-4 rounded-b-lg">
               <h2 className="text-white text-2xl font-bold">Productos</h2>
             </div>
-          </Link>
         </div>
       </Carousel>
     </div>
