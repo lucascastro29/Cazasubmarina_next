@@ -25,9 +25,9 @@ export default function CarouselComponent() {
           let _h = window.innerHeight/2;
           let _mouseX = e.clientX;
           let _mouseY = e.clientY;
-          let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
-          let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
-          let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
+          let _depth1 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.001}%`;
+          let _depth2 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.002}%`;
+          let _depth3 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.006}%`;
           let x = `${_depth3}, ${_depth2}, ${_depth1}`;
           console.log(x);
          
@@ -62,7 +62,10 @@ export default function CarouselComponent() {
               scale:"1.6",
               backgroundPosition:backgroundPost
             }}
-          ></div>
+          >
+
+          </div>
+          
           <div style={{height:"800px",width:"100%"}}>
           <Image
               alt="Cursos"
@@ -71,6 +74,8 @@ export default function CarouselComponent() {
               objectFit="cover" 
               className="transform transition-transform duration-500   "
             />
+                          <img         id='parallax'src="https://fontmeme.com/permalink/240606/377598eaae7f8b77a299b63891a8c88e.png" style={{zIndex:"2", backgroundPosition:backgroundPost,width:"432px",height:"142px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
+
           </div>
            
             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent opacity-75 p-4 rounded-b-lg">
@@ -85,6 +90,8 @@ export default function CarouselComponent() {
               objectFit="cover"
               className="transform transition-transform duration-500 group-hover:scale-105"
             />
+              <img src="https://fontmeme.com/permalink/240606/8a6e43b85103bb6efbbd74f890ef59e2.png" style={{zIndex:"2",width:"1172px",height:"152px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
+
             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent opacity-75 p-4 rounded-b-lg">
               <h2 className="text-white text-2xl font-bold">Productos</h2>
             </div>
