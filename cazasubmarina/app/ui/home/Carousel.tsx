@@ -74,7 +74,7 @@ export default function CarouselComponent() {
               objectFit="cover" 
               className="transform transition-transform duration-500   "
             />
-                          <img         id='parallax'src="https://fontmeme.com/permalink/240606/377598eaae7f8b77a299b63891a8c88e.png" style={{zIndex:"2", backgroundPosition:backgroundPost,width:"432px",height:"142px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
+                          <img         src="https://fontmeme.com/permalink/240606/377598eaae7f8b77a299b63891a8c88e.png" style={{zIndex:"2", backgroundPosition:backgroundPost,width:"432px",height:"142px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
 
           </div>
            
