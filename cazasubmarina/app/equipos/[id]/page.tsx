@@ -31,13 +31,13 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
   
   let prevProductId:number;
   let nextProductId:number;
+  let currentProduct;
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://lucascastro29.github.io/json_products_cazasubmarina/');
         const products = response.data;
         const currentProduct = products[id];
-        setProduct(currentProduct);
          prevProductId = id > 0 ? id - 1 : 84;
          nextProductId = id < products.length - 1 ? id + 1 : 0;
          id > 0 ? setPrevProductId(id - 1) : setPrevProductId(84);
@@ -50,7 +50,9 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
     };
 
     fetchData();
-  }, [id]);
+  }, []);
+  setProduct(currentProduct);
+
 
   if (!product) {
     return <div>Loading...</div>;
