@@ -32,7 +32,7 @@ let course: { nameurl: string; name: string; description: string; image: StaticI
       nameurl:'salida_guiada',
       name: 'SALIDA GUIADA',
       description: 'Descripción detallada del curso de apnea...',
-      image: [carouselimg_1,'carouselimg_2',carouselimg_3],
+      image: [carouselimg_1,carouselimg_2,carouselimg_3],
       details: 'Información adicional sobre el curso de apnea...'
     },
     {
