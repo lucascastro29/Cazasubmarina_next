@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -38,8 +38,6 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
         const products = response.data;
         const currentProduct = products[id];
         setProduct(currentProduct);
-
-        
          prevProductId = id > 0 ? id - 1 : 84;
          nextProductId = id < products.length - 1 ? id + 1 : 0;
          id > 0 ? setPrevProductId(id - 1) : setPrevProductId(84);

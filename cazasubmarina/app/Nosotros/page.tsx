@@ -1,5 +1,5 @@
 'use client';
-
+{/*https://via.placeholder.com/800x400*/}
 import React from 'react';
 import Carousel from '../ui/nosotros/Carousel';
 import InstructorCard from '../ui/nosotros/InstructorCard';
@@ -14,13 +14,13 @@ const instructors = [
     name: 'Juan Pérez',
     title: 'Instructor Principal de Cazasubmarina',
     description: 'Soy Juan, amante del mar y apasionado de la cazasubmarina. Con más de 20 años de experiencia, he dedicado mi vida a enseñar y compartir este maravilloso deporte.',
-    image: 'https://via.placeholder.com/800x400',
+    image: '',
   },
   {
     name: 'María López',
     title: 'Instructora de Apnea',
     description: 'Soy María, instructora certificada de apnea y cazasubmarina. Mi misión es ayudar a otros a explorar las profundidades del océano de manera segura y responsable.',
-    image: 'https://via.placeholder.com/800x400',
+    image: '',
   },
   // Agrega más instructores según sea necesario
 ];

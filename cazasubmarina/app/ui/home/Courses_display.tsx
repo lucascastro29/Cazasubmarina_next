@@ -52,7 +52,7 @@ export default function courses(){
         <Link href="/Cursos" >
 
     <div className="max-w-md bg-transparent pt-4 dark:bg-gray-800 ">
-    <Image src={cazasub_course} alt="design" height={0} width={0}    />
+    <Image src={cazasub_course} alt="design"     />
     <div className="p-4">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">CAZASUBMARINA</h5>
         

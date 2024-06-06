@@ -9,9 +9,7 @@ export default function Page() {
   <>
   <CarouselComponent/>
   <Carousel_Products/>
-  {/* 
   <Courses_display/>
-  */}
   <Nosotros_home/>
  
   </>

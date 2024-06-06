@@ -74,7 +74,7 @@ export default function CarouselComponent() {
               objectFit="cover" 
               className="transform transition-transform duration-500   "
             />
-                          <img         src="https://fontmeme.com/permalink/240606/377598eaae7f8b77a299b63891a8c88e.png" style={{zIndex:"2", backgroundPosition:backgroundPost,width:"432px",height:"142px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
+                          <Image     width={10} height={10}    src="" style={{zIndex:"2", backgroundPosition:backgroundPost,width:"432px",height:"142px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
 
           </div>
            
@@ -90,7 +90,7 @@ export default function CarouselComponent() {
               objectFit="cover"
               className="transform transition-transform duration-500 group-hover:scale-105"
             />
-              <img src="https://fontmeme.com/permalink/240606/8a6e43b85103bb6efbbd74f890ef59e2.png" style={{zIndex:"2",width:"1172px",height:"152px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
+              <Image src="" width={10} height={10} style={{zIndex:"2",width:"1172px",height:"152px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
 
             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent opacity-75 p-4 rounded-b-lg">
               <h2 className="text-white text-2xl font-bold">Productos</h2>

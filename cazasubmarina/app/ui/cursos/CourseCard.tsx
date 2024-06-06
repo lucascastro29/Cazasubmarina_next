@@ -26,7 +26,8 @@ const CourseCard: React.FC<{ course: Course, }> = ({ course }) => {
         <div className=" absolute w-full h-full shadow-xl rounded-lg overflow-hidden" >
           <Image src={course.image}
           alt={course.name}
-           layout="fill" objectFit="cover" className="rounded-lg" />
+           layout="fill" objectFit="cover" className="rounded-lg"
+           />
         </div>
         <div className="relative w-full flex flex-col bg-white text-black items-start justify-end z-10 p-4"style={{borderBottomLeftRadius: "7px",borderBottomRightRadius: "7px"}}>
           <h2 className="text-lg font-semibold flex  flex-col items-start justify-end" style={{borderBottom:"red 2px solid" ,width:"100%"} }>{course.name}</h2>

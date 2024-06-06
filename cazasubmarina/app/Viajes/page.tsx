@@ -1,25 +1,27 @@
 'use client';
+{/*https://via.placeholder.com/800x400 */}
 
 import React, { useEffect, useState } from 'react';
 import { Parallax } from 'react-parallax';
 import Carousel from '../ui/viajes/Carousel';
 import TripCard from '../ui/viajes/TripCard';
+import Image from 'next/image';
 
 const trips = [
   {
-    image: 'https://via.placeholder.com/800x400',
+    image: '',
     date: 'March 20, 2023',
     location: 'Punta del Este, Uruguay',
     duration: '3 days',
   },
   {
-    image: 'https://via.placeholder.com/800x400',
+    image: '',
     date: 'April 15, 2023',
     location: 'Montevideo, Uruguay',
     duration: '5 days',
   },
   {
-    image: 'https://via.placeholder.com/800x400',
+    image: '',
     date: 'May 10, 2023',
     location: 'Colonia del Sacramento, Uruguay',
     duration: '4 days',
@@ -40,7 +42,7 @@ const TravelPage: React.FC = () => {
       <div id="yourimg1" className="card rounded is-out">
         <div className="card__overlay"></div>
         <div className="card__heading">
-          <img src="https://via.placeholder.com/1600x800" alt=''/>  
+          <Image height={0} width={0} src="" alt=''/>  
           <span >Hover Me</span>
           <h2>Your Image</h2>
         </div>
@@ -49,7 +51,7 @@ const TravelPage: React.FC = () => {
       <div id="yourimg2" className="card rounded is-out">
         <div className="card__overlay"></div>
         <div className="card__heading">
-          <img src="https://via.placeholder.com/1600x800" alt=''/> 
+          <Image height={10} width={10} src="" alt=''/> 
           <span className="super">Hover Me</span>
           <h2>Your Image</h2>
         </div>
