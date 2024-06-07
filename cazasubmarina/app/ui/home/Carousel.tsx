@@ -39,9 +39,6 @@ export default function CarouselComponent() {
     
 
   }, []);
-  useEffect(()=>{
-  
-  },[])
   return (
     <div className="relative w-full h-full">
       <Carousel

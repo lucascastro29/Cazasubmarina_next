@@ -15,11 +15,41 @@ const images = [
   { src: 'https://via.placeholder.com/600x600', alt: 'Image 4', className: 'col-span-2 row-span-2' },
   { src: 'https://via.placeholder.com/400x600', alt: 'Image 5', className: 'row-span-2' },
   { src: 'https://via.placeholder.com/400x400', alt: 'Image 6' },
+  { src: 'https://via.placeholder.com/600x400',id:'observer1', alt: 'Image 7', className: 'col-span-2' },
+  { src: 'https://via.placeholder.com/400x400', alt: 'Image 8' },
+  { src: 'https://via.placeholder.com/400x600', alt: 'Image 1', className: 'row-span-2' },
+  { src: 'https://via.placeholder.com/600x400', alt: 'Image 2', className: 'col-span-2' },
+  { src: 'https://via.placeholder.com/400x400', alt: 'Image 3' },
+  { src: 'https://via.placeholder.com/600x600', alt: 'Image 4', className: 'col-span-2 row-span-2' },
+  { src: 'https://via.placeholder.com/400x400', alt: 'Image 8' },
+  { src: 'https://via.placeholder.com/400x600', alt: 'Image 5', className: 'row-span-2' },
+  { src: 'https://via.placeholder.com/400x400', alt: 'Image 6' },
+  { src: 'https://via.placeholder.com/600x400', alt: 'Image 7', className: 'col-span-2' },
+  { src: 'https://via.placeholder.com/400x400', alt: 'Image 8' },
+  { src: 'https://via.placeholder.com/400x600', alt: 'Image 1', className: 'row-span-2' },
+  { src: 'https://via.placeholder.com/600x400', alt: 'Image 2', className: 'col-span-2' },
+  { src: 'https://via.placeholder.com/400x400', alt: 'Image 3' }, 
+  { src: 'https://via.placeholder.com/400x400', alt: 'Image 8' },
+  { src: 'https://via.placeholder.com/400x400', alt: 'Image 8' },
+  { src: 'https://via.placeholder.com/600x600', alt: 'Image 4', className: 'col-span-2 row-span-2' },
+  { src: 'https://via.placeholder.com/400x600', alt: 'Image 5', className: 'row-span-2' },
+  { src: 'https://via.placeholder.com/400x400', alt: 'Image 6' },
   { src: 'https://via.placeholder.com/600x400', alt: 'Image 7', className: 'col-span-2' },
   { src: 'https://via.placeholder.com/400x400', alt: 'Image 8' },
 ];
+let observer=new IntersectionObserver((entradas,observer)=>{
+  console.log(entradas)
+},{
+  rootMargin:"0px 0px 0px 0px",
+  threshold:1.0
+
+})
+
 
 const GalleryPage: React.FC = () => {
+
+
+
   return (<div className={kanit.className}>
     <div className="container mx-auto py-8 px-4">
       <h1 className="text-3xl font-bold mb-6 w-full text-center">GALERIA</h1>
