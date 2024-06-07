@@ -8,7 +8,7 @@ export default function Page() {
   return (
   <>
   <CarouselComponent/>
-  <Carousel_Products/>
+  <Carousel_Products />
   <Courses_display/>
   <Nosotros_home/>
  

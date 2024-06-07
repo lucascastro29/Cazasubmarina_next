@@ -1,9 +1,158 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+import carrousel_Image_ambiente from "@/public/img/carrousel_home/ambiente.jpeg";
+import carrousel_Image_apnea from "@/public/img/carrousel_home/apnea.jpg";
+import carrousel_Image_cazasub from "@/public/img/carrousel_home/cazasub.jpeg";
+import carrousel_Image_products from "@/public/img/carrousel_home/products.jpg";
+
+import Image from "next/image";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+export default function CarouselComponent() {
+  const [backgroundPost, setBackgroundPost] = useState('');
+
+  useEffect(() => {
+    function parallax() {
+      // Add event listener
+      document.addEventListener("mousemove", parallaxEffect);
+      // Magic happens here
+      function parallaxEffect(e: { clientX: any; clientY: any; }) {
+        let _w = window.innerWidth / 2;
+        let _h = window.innerHeight / 2;
+        let _mouseX = e.clientX;
+        let _mouseY = e.clientY;
+        let _depth1 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.001}%`;
+        let _depth2 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.002}%`;
+        let _depth3 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.006}%`;
+        let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+        console.log(x);
+
+        setBackgroundPost(x);
+      }
+    }
+    parallax();
+
+    return () => {
+      document.removeEventListener("mousemove", parallaxEffect);
+    };
+  }, []);
+  
+function parallaxEffect(this: Document, ev: MouseEvent) {
+  throw new Error('Function not implemented.');
+}
+
+
+
+  return (
+    <div className="relative w-full h-full" id="below-landing">
+      <div className="relative w-full h-screen overflow-hidden">
+        <img
+          src="https://via.placeholder.com/1920x1080"
+          alt="Landing Background"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <Carousel
+          autoPlay
+          infiniteLoop
+          showThumbs={false}
+          showArrows={false}
+          showStatus={false}
+          className="h-screen"
+        >
+          <div className="relative group h-screen">
+            <Image
+              alt="Cursos"
+              src={carrousel_Image_products}
+              layout="fill"
+              objectFit="cover"
+              className="transform transition-transform duration-500"
+            />
+            <Image
+              src=""
+              style={{
+                zIndex: 2,
+                backgroundPosition: backgroundPost,
+                width: "432px",
+                height: "142px",
+                position: "absolute",
+                top: "20px",
+                left: "0px",
+                right: "0px",
+                margin: "20px"
+              }}
+              alt="fuente-savage-arcade"
+              width={10}
+              height={10}
+            />
+          </div>
+          <div className="relative group h-screen">
+            <Image
+              alt="Cursos"
+              src={carrousel_Image_cazasub}
+              layout="fill"
+              objectFit="cover"
+              className="transform transition-transform duration-500"
+            />
+            <Image
+              src=""
+              style={{
+                zIndex: 2,
+                backgroundPosition: backgroundPost,
+                width: "432px",
+                height: "142px",
+                position: "absolute",
+                top: "20px",
+                left: "0px",
+                right: "0px",
+                margin: "20px"
+              }}
+              alt="fuente-savage-arcade"
+              width={10}
+              height={10}
+            />
+          </div>
+          <div className="relative group h-screen">
+            <Image
+              alt="Cursos"
+              src={carrousel_Image_ambiente}
+              layout="fill"
+              objectFit="cover"
+              className="transform transition-transform duration-500"
+            />
+            <Image
+              src=""
+              style={{
+                zIndex: 2,
+                backgroundPosition: backgroundPost,
+                width: "432px",
+                height: "142px",
+                position: "absolute",
+                top: "20px",
+                left: "0px",
+                right: "0px",
+                margin: "20px"
+              }}
+              alt="fuente-savage-arcade"
+              width={10}
+              height={10}
+            />
+          </div>
+        </Carousel>
+      </div>
+    </div>
+  );
+}
+
+{/**'use client';
+
 import { useEffect, useRef, useState } from 'react';
-import carrousel_Image_1 from "@/public/img/carrousel_home/1.jpg";
-import carrousel_image from "@/public/img/Cursos_img/carrousel_cazasub/carouselimg_3_c.png"
-import carrousel_Image_1_0 from "@/public/img/carrousel_home/2.jpg";
+import carrousel_Image_ambiente from "@/public/img/carrousel_home/ambiente.jpeg";
+import carrousel_Image_apnea from "@/public/img/carrousel_home/apnea.jpg"
+import carrousel_Image_cazasub from "@/public/img/carrousel_home/cazasub.jpeg";
+import carrousel_Image_products from "@/public/img/carrousel_home/products.jpg";
+
 import Image from "next/image";
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -40,60 +189,119 @@ export default function CarouselComponent() {
 
   }, []);
   return (
-    <div className="relative w-full h-full">
-      <Carousel
-        autoPlay
-        infiniteLoop
-        showThumbs={false}
-        showArrows={false}
-        showStatus={false}
-        className="shadow-lg"
-      >
-        <div className="relative group" style={{height:"800px",width:"100%"}}>
-          <div
-            className="absolute   rounded-lg"
-            id='parallax'
-            
-            style={{
-              zIndex: 1,
-              scale:"1.6",
-              backgroundPosition:backgroundPost
-            }}
-          >
-
-          </div>
+    <div className="relative w-full h-full"  id="below-landing">
+      <div className="relative w-full h-screen overflow-hidden">
+      <img 
+        src="https://via.placeholder.com/1920x1080" 
+        alt="Landing Background" 
+        className="absolute inset-0 w-full h-full object-cover" 
+      /><Carousel
+      autoPlay
+      infiniteLoop
+      showThumbs={false}
+      showArrows={false}
+      showStatus={false}
+      className="shadow-lg"
+    >
+      <div className="relative group" >
+        <div
+          className="absolute   rounded-lg"
+          id='parallax'
           
-          <div style={{height:"800px",width:"100%"}}>
-          <Image
-              alt="Cursos"
-              src={carrousel_image}
-              layout="fill"
-              objectFit="cover" 
-              className="transform transition-transform duration-500   "
-            />
-                          <Image     width={10} height={10}    src="" style={{zIndex:"2", backgroundPosition:backgroundPost,width:"432px",height:"142px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
+          style={{
+            zIndex: 1,
+            scale:"1.6",
+            backgroundPosition:backgroundPost
+          }}
+        >
 
-          </div>
-           
-            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent opacity-75 p-4 rounded-b-lg">
-              <h2 className="text-white text-2xl font-bold">Cursos</h2>
-            </div>
         </div>
-        <div className="relative group" style={{height:"800px",width:"100%"}}>
-            <Image
-              alt="Productos"
-              src={carrousel_Image_1_0}
-              layout="fill"
-              objectFit="cover"
-              className="transform transition-transform duration-500 group-hover:scale-105"
-            />
-              <Image src="" width={10} height={10} style={{zIndex:"2",width:"1172px",height:"152px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
+        
+      
+         
+      </div>
+      <div className="relative group" >
+        <div
+          className="absolute   rounded-lg"
+          id='parallax'
+          
+          style={{
+            zIndex: 1,
+            scale:"1.6",
+            backgroundPosition:backgroundPost
+          }}
+        >
 
-            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent opacity-75 p-4 rounded-b-lg">
-              <h2 className="text-white text-2xl font-bold">Productos</h2>
-            </div>
         </div>
-      </Carousel>
+        
+        <div  className='h-screen'>
+        <Image
+            alt="Cursos"
+            src={carrousel_Image_products}
+            layout="fill"
+            objectFit="cover" 
+            className="transform transition-transform duration-500  h-screen "
+          />
+                        <Image     width={10} height={10}    src="" style={{zIndex:"2", backgroundPosition:backgroundPost,width:"432px",height:"142px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
+
+        </div>
+      </div>
+      <div className="relative group h-full w-hull" >
+      <div
+          className="absolute   rounded-lg"
+          id='parallax'
+          
+          style={{
+            zIndex: 1,
+            scale:"1.6",
+            backgroundPosition:backgroundPost
+          }}
+        >
+
+        </div>
+        
+        <Image
+            alt="Cursos"
+            src={carrousel_Image_cazasub}
+            layout="fill"
+            objectFit="cover" 
+            className="transform transition-transform duration-500 h-screen  "
+          />
+                        <Image     width={10} height={10}    src="" style={{zIndex:"2", backgroundPosition:backgroundPost,width:"432px",height:"142px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
+
+         
+      </div>
+      <div className="relative group" style={{height:"800px",width:"100%"}}>
+      <div
+          className="absolute   rounded-lg"
+          id='parallax'
+          
+          style={{
+            zIndex: 1,
+            scale:"1.6",
+            backgroundPosition:backgroundPost
+          }}
+        >
+
+        </div>
+        
+        <div style={{height:"800px",width:"100%"}}>
+        <Image
+            alt="Cursos"
+            src={carrousel_Image_ambiente}
+            layout="fill"
+            objectFit="cover" 
+            className="transform transition-transform duration-500  h-screen "
+          />
+                        <Image     width={10} height={10}    src="" style={{zIndex:"2", backgroundPosition:backgroundPost,width:"432px",height:"142px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
+
+        </div>
+         
+      </div>
+    </Carousel>
+    </div>
+      
     </div>
   );
-}
+} 
+**/}
