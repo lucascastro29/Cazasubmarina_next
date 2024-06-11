@@ -8,7 +8,6 @@ const kanit=Kanit({
 
 import aletas_1 from "@/public/img/Products/products_img/Aletas/Aletas_seasub_dive_2.jpg"
 import aletas_2 from "@/public/img/Products/products_img/Aletas/Aletas_seasub_predator_1.jpg"
-import aletas_3 from "@/public/img/Products/products_img/Aletas/Aletas_seasub_predator_2.jpg"
 
 import arpones_1 from "@/public/img/Products/products_img/Arpones/Cressi_1.jpg"
 import arpones_2 from "@/public/img/Products/products_img/Arpones/Cressi_2.jpg"

@@ -12,7 +12,7 @@ const kanit = Kanit({
 
 export default function Page() {
   const [showBurgerButton, setShowBurgerButton] = useState(false);
-  const [navbarVisible, setNavbarVisible] = useState(false);
+  const [navbarVisible, setNavbarVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,8 +20,11 @@ export default function Page() {
       if (sectionBelowLanding) {
         const sectionTop = sectionBelowLanding.getBoundingClientRect().top;
         if (sectionTop <= 0) {
+      console.log(sectionTop)
+
           setNavbarVisible(true);
         } else {
+
           setNavbarVisible(false);
         }
       }
@@ -37,13 +40,13 @@ export default function Page() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 transition-transform duration-300 ${
-          navbarVisible ? "translate-y-0" : "-translate-y-full"
+        className={`fixed top-0 left-0 z-2 right-0 transition-transform duration-300 ${
+          navbarVisible ? "translate-y-0" : "translate-y-full"
         } bg-white border-gray-200 dark:bg-gray-900 w-full shadow-lg`}
         style={{ backgroundColor: "white" }}
         id="Home"
       >
-        <div className="max-w-screen-xl flex items-center justify-between mx-auto py-2 px-4"id="below-landing" >
+        <div className="max-w-screen-xl flex items-center justify-between mx-auto py-2 px-4" >
           <Link href={"/"}>
             <Image src={icon} width={50} height={50} alt="icon_image" />
           </Link>

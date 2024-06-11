@@ -46,8 +46,8 @@ function parallaxEffect(this: Document, ev: MouseEvent) {
 
 
   return (
-    <div className="relative w-full h-full" id="below-landing">
-      <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-full "  >
+      <div className="relative w-full h-[95vh] overflow-hidden" id="below-landing">
         <img
           src="https://via.placeholder.com/1920x1080"
           alt="Landing Background"
@@ -59,15 +59,16 @@ function parallaxEffect(this: Document, ev: MouseEvent) {
           showThumbs={false}
           showArrows={false}
           showStatus={false}
-          className="h-screen"
+          className="h-[95vh]"
         >
-          <div className="relative group h-screen">
+          <div className="relative group h-[95vh]">
             <Image
               alt="Cursos"
               src={carrousel_Image_products}
               layout="fill"
+
               objectFit="cover"
-              className="transform transition-transform duration-500"
+              className="transform transition-transform  h-[95vh] duration-500"
             />
             <Image
               src=""
@@ -87,13 +88,40 @@ function parallaxEffect(this: Document, ev: MouseEvent) {
               height={10}
             />
           </div>
-          <div className="relative group h-screen">
+          <div className="relative group h-[95vh]">
+            <Image
+              alt="Cursos"
+              src={carrousel_Image_apnea}
+
+              objectFit="cover"
+              className="transform transition-transform  h-[95vh] duration-500"
+            />
+            <Image
+              src=""
+              style={{
+                zIndex: 2,
+                backgroundPosition: backgroundPost,
+                width: "432px",
+                height: "142px",
+                position: "absolute",
+                top: "20px",
+                left: "0px",
+                right: "0px",
+                margin: "20px"
+              }}
+              alt="fuente-savage-arcade"
+              width={10}
+              height={10}
+            />
+          </div>
+          <div className="relative group h-[95vh]">
             <Image
               alt="Cursos"
               src={carrousel_Image_cazasub}
               layout="fill"
+
               objectFit="cover"
-              className="transform transition-transform duration-500"
+              className="transform transition-transform  duration-500"
             />
             <Image
               src=""
@@ -113,13 +141,12 @@ function parallaxEffect(this: Document, ev: MouseEvent) {
               height={10}
             />
           </div>
-          <div className="relative group h-screen">
+          <div className="relative group h-[95vh]">
             <Image
               alt="Cursos"
               src={carrousel_Image_ambiente}
-              layout="fill"
               objectFit="cover"
-              className="transform transition-transform duration-500"
+              className="transform transition-transform h-[95vh] duration-500"
             />
             <Image
               src=""
@@ -190,7 +217,7 @@ export default function CarouselComponent() {
   }, []);
   return (
     <div className="relative w-full h-full"  id="below-landing">
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="relative w-full h-[95vh] overflow-hidden">
       <img 
         src="https://via.placeholder.com/1920x1080" 
         alt="Landing Background" 
@@ -234,13 +261,13 @@ export default function CarouselComponent() {
 
         </div>
         
-        <div  className='h-screen'>
+        <div  className='h-[95vh]'>
         <Image
             alt="Cursos"
             src={carrousel_Image_products}
             layout="fill"
             objectFit="cover" 
-            className="transform transition-transform duration-500  h-screen "
+            className="transform transition-transform duration-500  h-[95vh] "
           />
                         <Image     width={10} height={10}    src="" style={{zIndex:"2", backgroundPosition:backgroundPost,width:"432px",height:"142px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
 
@@ -265,7 +292,7 @@ export default function CarouselComponent() {
             src={carrousel_Image_cazasub}
             layout="fill"
             objectFit="cover" 
-            className="transform transition-transform duration-500 h-screen  "
+            className="transform transition-transform duration-500 h-[95vh]  "
           />
                         <Image     width={10} height={10}    src="" style={{zIndex:"2", backgroundPosition:backgroundPost,width:"432px",height:"142px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
 
@@ -291,7 +318,7 @@ export default function CarouselComponent() {
             src={carrousel_Image_ambiente}
             layout="fill"
             objectFit="cover" 
-            className="transform transition-transform duration-500  h-screen "
+            className="transform transition-transform duration-500  h-[95vh] "
           />
                         <Image     width={10} height={10}    src="" style={{zIndex:"2", backgroundPosition:backgroundPost,width:"432px",height:"142px",position:"absolute",top:"20px",right:"0px",left:"0px",margin:"20px"}} alt="fuente-savage-arcade" />
 
