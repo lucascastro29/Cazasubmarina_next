@@ -83,11 +83,38 @@ body {
 
 
 
-#parallax {
+#parallaxp {  
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: url("../public/img/diseños/Gerardo.png");
+  background-image: url("../public/img/textos/Equipos.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 50% 50%;
+}
+#parallaxa {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("../public/img/textos/apnea.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 50% 50%;
+}
+#parallaxc {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("../public/img/textos/cazasub.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 50% 50%;
+}
+#parallaxam {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("../public/img/textos/AMBIENTE.png");
   background-repeat: no-repeat;
   background-position: center;
   background-position: 50% 50%;

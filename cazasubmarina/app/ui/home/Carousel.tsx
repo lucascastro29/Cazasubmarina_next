@@ -9,6 +9,7 @@ import carrousel_Image_products from "@/public/img/carrousel_home/products.jpg";
 import Image from "next/image";
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Link from 'next/link';
 
 export default function CarouselComponent() {
   const [backgroundPost, setBackgroundPost] = useState('');
@@ -23,9 +24,9 @@ export default function CarouselComponent() {
         let _h = window.innerHeight / 2;
         let _mouseX = e.clientX;
         let _mouseY = e.clientY;
-        let _depth1 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.001}%`;
-        let _depth2 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.002}%`;
-        let _depth3 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.006}%`;
+        let _depth1 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.01}%`;
+        let _depth2 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.02}%`;
+        let _depth3 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.01}%`;
         let x = `${_depth3}, ${_depth2}, ${_depth1}`;
         console.log(x);
 
@@ -70,22 +71,22 @@ function parallaxEffect(this: Document, ev: MouseEvent) {
               objectFit="cover"
               className="transform transition-transform  h-[95vh] duration-500"
             />
-            <Image
-              src=""
+            <div
+              id='parallaxp'
+
               style={{
                 zIndex: 2,
                 backgroundPosition: backgroundPost,
-                width: "432px",
-                height: "142px",
                 position: "absolute",
-                top: "20px",
-                left: "0px",
+                top: "-200px",
+                left: "-250px",
                 right: "0px",
-                margin: "20px"
+                bottom:"0px",
+                paddingBottom:"600px",
+                margin: "20px",
+                width:"200vh",
+                height:"80vh",
               }}
-              alt="fuente-savage-arcade"
-              width={10}
-              height={10}
             />
           </div>
           <div className="relative group h-[95vh]">
@@ -96,22 +97,20 @@ function parallaxEffect(this: Document, ev: MouseEvent) {
               objectFit="cover"
               className="transform transition-transform  h-[95vh] duration-500"
             />
-            <Image
-              src=""
+            <div
+              id='parallaxa'
+
               style={{
                 zIndex: 2,
                 backgroundPosition: backgroundPost,
-                width: "432px",
-                height: "142px",
                 position: "absolute",
-                top: "20px",
-                left: "0px",
+                top: "-50px",
+                left: "-400px",
                 right: "0px",
-                margin: "20px"
+                margin: "20px",
+                width:"200vh",
+                height:"80vh",
               }}
-              alt="fuente-savage-arcade"
-              width={10}
-              height={10}
             />
           </div>
           <div className="relative group h-[95vh]">
@@ -123,22 +122,21 @@ function parallaxEffect(this: Document, ev: MouseEvent) {
               objectFit="cover"
               className="transform transition-transform  duration-500"
             />
-            <Image
-              src=""
+            <div
+              id='parallaxc'
               style={{
                 zIndex: 2,
+
                 backgroundPosition: backgroundPost,
-                width: "432px",
-                height: "142px",
                 position: "absolute",
-                top: "20px",
+                
                 left: "0px",
                 right: "0px",
-                margin: "20px"
+                bottom:"-200px",
+                margin: "20px",
+                width:"200vh",
+                height:"80vh",
               }}
-              alt="fuente-savage-arcade"
-              width={10}
-              height={10}
             />
           </div>
           <div className="relative group h-[95vh]">
@@ -148,22 +146,20 @@ function parallaxEffect(this: Document, ev: MouseEvent) {
               objectFit="cover"
               className="transform transition-transform h-[95vh] duration-500"
             />
-            <Image
-              src=""
+            <Link
+              id='parallaxam'
+          href="/Nosotros"
               style={{
                 zIndex: 2,
                 backgroundPosition: backgroundPost,
-                width: "432px",
-                height: "142px",
                 position: "absolute",
                 top: "20px",
                 left: "0px",
                 right: "0px",
-                margin: "20px"
+                margin: "20px",
+                width:"200vh",
+                height:"80vh",
               }}
-              alt="fuente-savage-arcade"
-              width={10}
-              height={10}
             />
           </div>
         </Carousel>
