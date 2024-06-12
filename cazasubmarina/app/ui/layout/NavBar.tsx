@@ -12,37 +12,14 @@ const kanit = Kanit({
 
 export default function Page() {
   const [showBurgerButton, setShowBurgerButton] = useState(false);
-  const [navbarVisible, setNavbarVisible] = useState(true);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sectionBelowLanding = document.getElementById("below-landing");
-      if (sectionBelowLanding) {
-        const sectionTop = sectionBelowLanding.getBoundingClientRect().top;
-        if (sectionTop <= 0) {
-      console.log(sectionTop)
 
-          setNavbarVisible(true);
-        } else {
 
-          setNavbarVisible(false);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 z-2 right-0 transition-transform duration-300 ${
-          navbarVisible ? "translate-y-0" : "translate-y-full"
-        } bg-white border-gray-200 dark:bg-gray-900 w-full shadow-lg`}
+        className={`fixed  z-40 relative transition-transform bg-white border-gray-200 dark:bg-gray-900 w-full shadow-lg`}
         style={{ backgroundColor: "white" }}
         id="Home"
       >
@@ -87,7 +64,7 @@ export default function Page() {
               className="flex flex-col text-sm md:text-base font-medium mt-4 md:mt-0 md:flex-row md:space-x-4"
               style={{ backgroundColor: "#ffffff00" }}
             >
-              {["Cursos", "Equipos", "Galeria", "Eventos", "Viajes", "Nosotros"].map(
+              {["Cursos", "equipos", "Galeria", "Eventos", "Viajes", "Nosotros"].map(
                 (item, index) => (
                   <li key={index} className={kanit.className}>
                     <Link
